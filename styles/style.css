@@ -1,0 +1,34 @@
+
+/* {
+  border: 1px dashed blue;
+}*/
+
+a, a:hover, a:focus {
+  color: black;
+  text-decoration: none;
+}
+
+/*** NavBar ***/
+.background {
+  background-color: #311B92;
+}
+
+/*** Browse Project List ***/
+.list-group-item {
+  border: 0;
+}
+
+.list-group-separator {
+  border-bottom:  1px solid grey;
+}
+
+/*** Browse Project Description ***/
+.panel-spacing {
+  margin-top: 20px;
+}
+
+/*.project-position {
+  position: fixed;
+  top: 80px;
+  left: 36%;
+}*/
