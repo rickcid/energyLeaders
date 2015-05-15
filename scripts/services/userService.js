@@ -96,17 +96,17 @@ app.service('UserService', function(){
     {
       projectId: 0,
       projectDescription: {
-        project_title: 'Bridge to Mars',
-        overview: 'Need to build a bridge to Mars. It is going to involve a lot of time and effort. It will need space travel experience and engineering experience.',
-        deliverable: 'A functional bridge'
+        project_title: 'Project Implementation Plan',
+        overview: 'We have a temporary need for an individual with significant project management experience in the oil and gas industry.  The implementation manager will manage the implementation of a transatlantic pipeline.  Must be able to manage projects on a global scale and stakeholders across various global regions.',
+        deliverable: 'A functional pipeline'
       },
       location: {
         city: 'Houston',
         state: 'Texas',
         country: 'USA'
       },
-      start_date: 'January, 01, 2016',
-      project_length: 'Mid-term (3 to 6 Months)',
+      start_date: 'February, 01, 2016',
+      project_length: 'Long-term (6+ Months)',
       weekly_hours: '40',
       commute: 'Rotational Schedule',
       rotational_days_on: '15',
@@ -156,7 +156,7 @@ app.service('UserService', function(){
         country: 'USA'
       },
       start_date: 'January, 01, 2016',
-      project_length: 'Mid-term (3+ Months)',
+      project_length: 'Mid-term (3 to 6 Months)',
       weekly_hours: '40',
       commute: 'Rotational Schedule',
       rotational_days_on: '15',
@@ -167,6 +167,131 @@ app.service('UserService', function(){
       },
       education:'MBA',
       date_created: '2015-04-01T16:06:58.970Z'
-    } 
+    },
+      {
+      projectId: 3,
+      projectDescription: {
+        project_title: 'Efficiency & Productivity Seminar',
+        overview: 'Need an experienced efficiency and productivity consultant to provide a seminar for employees working on Brazilian oil rig. Must speak Portuguese!',
+        deliverable: 'A fully certified team'
+      },
+      location: {
+        city: 'Sao Paolo',
+        state: 'Sao Paolo',
+        country: 'Brazil'
+      },
+      start_date: 'March, 01, 2016',
+      project_length: 'Mid-term (3 to 6 Months)',
+      weekly_hours: '40',
+      commute: 'Rotational Schedule',
+      rotational_days_on: '15',
+      rotational_days_off: '15',
+      project_budget: "20,000",
+      desired_candidate: {
+        experience: {exp1: 'Six Sigma', exp2: 'Safety'}
+      },
+      education:'MBA',
+      date_created: '2015-03-01T16:06:58.970Z'
+    },
+      {
+      projectId: 4,
+      projectDescription: {
+        project_title: 'Operational Assessment',
+        overview: 'Need an experienced consultant to provide an operational assessment on our operation in Houston, Texas.  Operation consist of 250 oil rig workers, with a small management team.  Must be able to generate dashboards that report ongoing progress.',
+        deliverable: 'A more efficient operation, hard-data'
+      },
+      location: {
+        city: 'Houston',
+        state: 'Teas',
+        country: 'USA'
+      },
+      start_date: 'April, 01, 2016',
+      project_length: 'Long-term (6+ Months)',
+      weekly_hours: '40',
+      commute: 'Rotational Schedule',
+      rotational_days_on: '15',
+      rotational_days_off: '15',
+      project_budget: "80,000",
+      desired_candidate: {
+        experience: {exp1: 'Six Sigma', exp2: 'Safety'}
+      },
+      education:'MBA',
+      date_created: '2015-02-01T16:06:58.970Z'
+    },
+    {
+      projectId: 5,
+      projectDescription: {
+        project_title: 'Production Processing Plan',
+        overview: 'Need an experienced consultant to analyze our operation and create a production processing plan based on the assesment findings. Consultant will need to have processing plant experience.  Time will vary from location to location in South Carolina plants.',
+        deliverable: 'Deliver and implement updated processing plan'
+      },
+      location: {
+        city: 'Charleston',
+        state: 'South Carolina',
+        country: 'USA'
+      },
+      start_date: 'October, 01, 2015',
+      project_length: 'Long-term (6+ Months)',
+      weekly_hours: '40',
+      commute: 'Rotational Schedule',
+      rotational_days_on: '15',
+      rotational_days_off: '15',
+      project_budget: "60,000",
+      desired_candidate: {
+        experience: {exp1: 'Six Sigma', exp2: 'Safety'}
+      },
+      education:'MBA',
+      date_created: '2015-04-01T16:06:58.970Z'
+    },
+          {
+      projectId: 6,
+      projectDescription: {
+        project_title: 'Operational Assessment',
+        overview: 'Need an experienced consultant to provide an operational assessment on our operation in Houston, Texas.  Operation consist of 250 oil rig workers, with a small management team.  Must be able to generate dashboards that report ongoing progress.',
+        deliverable: 'A more efficient operation, hard-data'
+      },
+      location: {
+        city: 'Houston',
+        state: 'Teas',
+        country: 'USA'
+      },
+      start_date: 'April, 01, 2016',
+      project_length: 'Long-term (6+ Months)',
+      weekly_hours: '40',
+      commute: 'Rotational Schedule',
+      rotational_days_on: '15',
+      rotational_days_off: '15',
+      project_budget: "80,000",
+      desired_candidate: {
+        experience: {exp1: 'Six Sigma', exp2: 'Safety'}
+      },
+      education:'MBA',
+      date_created: '2015-02-01T16:06:58.970Z'
+    },
+    {
+      projectId: 7,
+      projectDescription: {
+        project_title: 'Organizational Development Plan',
+        overview: 'Need an experienced consultant to analyze our team efficiency and provide an organizational development plan that will create more efficiencies and productivity from our human caplital.',
+        deliverable: 'Deliver and implement an Organizational Development Plan'
+      },
+      location: {
+        city: 'Vancouver',
+        state: 'British Colombia',
+        country: 'Canada'
+      },
+      start_date: 'September, 01, 2015',
+      project_length: 'Mid-term (3 to 6 Months)',
+      weekly_hours: '40',
+      commute: 'Rotational Schedule',
+      rotational_days_on: '15',
+      rotational_days_off: '15',
+      project_budget: "20,000",
+      desired_candidate: {
+        experience: {exp1: 'Six Sigma', exp2: 'Safety'}
+      },
+      education:'MBA',
+      date_created: '2015-05-01T16:06:58.970Z'
+    }   
   ];
 });

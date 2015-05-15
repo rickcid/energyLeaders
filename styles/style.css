@@ -1,34 +1,82 @@
 
-/* {
+/* * {
   border: 1px dashed blue;
 }*/
+
+
+/*** GLOBAL STYLES ***/
+/* Background Color */
+body {
+  background: white;/*#F3F3F3;*/
+
+}
 
 a, a:hover, a:focus {
   color: black;
   text-decoration: none;
 }
 
-/*** NavBar ***/
-.background {
-  background-color: #311B92;
+/* Titles Text Weight */
+.project-title-styling {
+  font-weight: 500;
+  border-bottom:  4px solid #ECECEC;
 }
 
-/*** Browse Project List ***/
-.list-group-item {
+
+/*** NAVBAR ***/
+.brand-style {
+  font-weight: 500;
+}
+
+.nav-spacing {
+  padding-top: 80px;
+}
+
+.background {
+  background-color: #3b5bb3; /*#4E5D6C;/*#3B4146; #311B92;*/
+}
+
+/*** BROWSE/PROJECTS SCROLLING LIST ***/
+/* Content Box */
+#scrollArea {
+  height: 700px;
+  overflow: auto;
+}
+
+.list-styling:hover {
+  background-color: #ECECEC;
+}
+
+.list-group-border {
   border: 0;
 }
 
 .list-group-separator {
-  border-bottom:  1px solid grey;
+  border-bottom:  1px solid #ECECEC;
 }
 
-/*** Browse Project Description ***/
+.content-box-style {
+  background-color: #ECECEC;
+}
+
+
+/*** BROWSE/PROJECTS SELECTED PROJECT ***/
 .panel-spacing {
   margin-top: 20px;
 }
 
-/*.project-position {
-  position: fixed;
-  top: 80px;
-  left: 36%;
-}*/
+.budget-title-styling {
+  font-size: 20px;
+}
+
+.budget-box {
+  font-size: 40px;
+  font-weight: 300;  
+  margin-top: 20px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+.title {
+  text-align: center;
+}
