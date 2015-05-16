@@ -1,10 +1,12 @@
-
-/* * {
+/*
+ * {
   border: 1px dashed blue;
 }*/
 
 
 /*** GLOBAL STYLES ***/
+
+
 /* Background Color */
 body {
   background: white;/*#F3F3F3;*/
@@ -16,10 +18,11 @@ a, a:hover, a:focus {
   text-decoration: none;
 }
 
-/* Titles Text Weight */
-.project-title-styling {
+/* Titles Text Weight & Border */
+.titles-styling {
   font-weight: 500;
-  border-bottom:  4px solid #ECECEC;
+  border-bottom:  2px solid #ECECEC;
+  padding-bottom: 5px;
 }
 
 
@@ -35,6 +38,15 @@ a, a:hover, a:focus {
 .background {
   background-color: #3b5bb3; /*#4E5D6C;/*#3B4146; #311B92;*/
 }
+
+/*** MAIN PAGE LAYOUT ***/
+
+.pic-align {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
 /*** BROWSE/PROJECTS SCROLLING LIST ***/
 /* Content Box */
@@ -72,7 +84,8 @@ a, a:hover, a:focus {
 .budget-box {
   font-size: 40px;
   font-weight: 300;  
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-bottom: 0px;
   text-align: center;
   background-color: #f1f1f1;
 }
@@ -80,3 +93,8 @@ a, a:hover, a:focus {
 .title {
   text-align: center;
 }
+
+.char-left-alignment {
+  padding-left: 0;
+}
+

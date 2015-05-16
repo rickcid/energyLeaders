@@ -1,6 +1,26 @@
 var app = angular.module('energyLeaders');
 
+
 app.service('UserService', function(){
+
+  this.displayAll = function(obj) {
+    var allItems = '';
+    for (var prop in obj) {
+      allItems = allItems + ', ' + obj[prop];
+    }
+    return allItems.replace(',', '');
+  };
+
+
+  this.rotationalDays = function(days) {
+    if (days) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  };
+
   this.consultantData = [
     {
       first_name: 'John',
@@ -163,7 +183,7 @@ app.service('UserService', function(){
       rotational_days_off: '15',
       project_budget: "15,000",
       desired_candidate: {
-        experience: {exp1: 'Six Sigma', exp2: 'Safety'}
+        experience: {exp1: 'Six Sigma', exp2: 'Safety', exp3: 'Scrum', exp4: 'Agile'}
       },
       education:'MBA',
       date_created: '2015-04-01T16:06:58.970Z'
@@ -209,8 +229,8 @@ app.service('UserService', function(){
       project_length: 'Long-term (6+ Months)',
       weekly_hours: '40',
       commute: 'Rotational Schedule',
-      rotational_days_on: '15',
-      rotational_days_off: '15',
+      rotational_days_on: '7',
+      rotational_days_off: '7',
       project_budget: "80,000",
       desired_candidate: {
         experience: {exp1: 'Six Sigma', exp2: 'Safety'}
@@ -235,7 +255,7 @@ app.service('UserService', function(){
       weekly_hours: '40',
       commute: 'Rotational Schedule',
       rotational_days_on: '15',
-      rotational_days_off: '15',
+      rotational_days_off: '7',
       project_budget: "60,000",
       desired_candidate: {
         experience: {exp1: 'Six Sigma', exp2: 'Safety'}
@@ -258,7 +278,7 @@ app.service('UserService', function(){
       start_date: 'April, 01, 2016',
       project_length: 'Long-term (6+ Months)',
       weekly_hours: '40',
-      commute: 'Rotational Schedule',
+      commute: 'Offshore',
       rotational_days_on: '15',
       rotational_days_off: '15',
       project_budget: "80,000",
@@ -283,9 +303,9 @@ app.service('UserService', function(){
       start_date: 'September, 01, 2015',
       project_length: 'Mid-term (3 to 6 Months)',
       weekly_hours: '40',
-      commute: 'Rotational Schedule',
-      rotational_days_on: '15',
-      rotational_days_off: '15',
+      commute: 'Travel and work at client site.',
+      rotational_days_on: '',
+      rotational_days_off: '',
       project_budget: "20,000",
       desired_candidate: {
         experience: {exp1: 'Six Sigma', exp2: 'Safety'}

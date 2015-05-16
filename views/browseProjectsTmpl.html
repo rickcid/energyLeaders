@@ -2,107 +2,161 @@
 
   <!-- LEFT PANEL -->
   <div class="col-md-8">    
-<!--     <div class="well" style="border: 1px dashed red;"> -->
+
+    <!-- DEFAULT IMG -->
+    <div ng-show="listMode">
+      <img src="images/oil-and-gas-workers.jpg" class="img-responsive img-browse">
+<!--       <img src="images/oil-and-gas-workers.jpg" id="well-border" class="img-responsive img-browse well"> -->
+    </div><!-- End of IMG -->
     
     <!-- PROJECT DETAILS -->
-    <h2 class="project-title-styling">{{project.projectDescription.project_title}}</h2>
-    
-    <div class="row">
-      <div class="col-md-6">
-        <span>
-          <strong>Posted:</strong> 
-          <span am-time-ago="project.date_created"></span>
-        </span></br>
-        <span>
-          <strong>Start Date:</strong>
-          <span>{{project.start_date}}</span>
-        </span></br>
-        <span>
-          <strong>Duration:</strong>
-          <span>{{project.project_length}}</span>
-        </span></br> 
-        <span>
-          <strong>Location:</strong> 
-            <span> {{project.location.city + ', ' + project.location.state + ', ' + project.location.country}}</span>
-        </span></br>
-      </div>
-
-      <div class="col-md-6 title">
-        <div class="panel panel-default budget-box">
-          <span> {{'$' + project.project_budget}} </span>
-        </div></br>       
-      </div>
-
-    </div><!-- End of Row -->
-
-    <div class="panel panel-default">
-        <div class="panel-body">
-            Basic panel
+    <div ng-show="!listMode">
+      <h2 class="titles-styling">{{project.projectDescription.project_title}}</h2>
+      
+      <div class="row">
+        <div class="col-md-6">
+          <span>
+            <strong>Posted:</strong> 
+            <span am-time-ago="project.date_created"></span>
+          </span></br>
+          <span>
+            <strong>Start Date:</strong>
+            <span>{{project.start_date}}</span>
+          </span></br>
+          <span>
+            <strong>Duration:</strong>
+            <span>{{project.project_length}}</span>
+          </span></br> 
+          <span>
+            <strong>Location:</strong> 
+              <span> {{project.location.city + ', ' + project.location.state + ', ' + project.location.country}}</span>
+          </span></br>
         </div>
-    </div>
 
-    <span>
-      <strong> Budget:  </strong>
-      <span>{{'$' + project.project_budget}}</span>
-    </span></br>
-    <p>
-      <strong>Location:</strong> 
-      <span> {{project.location.city + ', ' + project.location.state + ', ' + project.location.country}}</span>
-    </p>
+        <div class="col-md-6 title">
+          <div class="panel panel-default budget-box">
+            <span> {{'$' + project.project_budget}} </span>
+          </div></br>       
+        </div>
 
-    <!-- PROJECT DISCRIPTION -->
-    <div class="row">
-      <div class="col-md-12">
-        <div class="panel panel-default panel-spacing">
-          <div class="panel-heading">
-            <h3 class="panel-title">Project Description</h3>  
+      </div><!-- End of Row -->
+
+      <!-- PROJECT DISCRIPTION -->
+      <div class="row">
+        <div class="col-md-12">
+
+          <div class="panel panel-default panel-spacing">
+            <div class="panel-heading">
+              <h3 class="panel-title">Project Description</h3>  
+            </div>
+            <div class="panel-body">
+              {{project.projectDescription.overview}}
+            </div> 
           </div>
-          <div class="panel-body">
-            {{project.projectDescription.overview}}
-          </div> 
-        </div>         
-      </div>
-    </div>
 
-<!--     </div> --><!-- End of well -->
+          <div class="panel panel-default">
+            <div class="panel-body">
+
+              <div class="col-md-12 char-left-alignment">
+                <p>
+                  <strong>Deliverable:</strong>
+                  <span>{{project.projectDescription.deliverable}}</span>
+                </p> 
+              </div><!-- End of 1st Row -->
+
+
+              <div class="col-md-12 char-left-alignment">  
+                <p>
+                  <strong>Weekly Required Hours:</strong>
+                  <span>{{project.weekly_hours}}</span>
+                </p>
+              </div><!-- End of 2nd Row 1st Column -->
+
+
+              <div class="col-md-6 char-left-alignment">  
+                <p>
+                  <strong>Commute Requirement:</strong>
+                  <span>{{project.commute}}</span>
+                </p>
+              </div><!-- End of 3rd Row 1st Column -->
+
+              <div class="col-md-6">
+                <p>
+                  <strong></strong>
+                  <span ng-show="rotationDays">{{project.rotational_days_on + " Days On, " + project.rotational_days_off + " Days Off"}}
+                  </span>
+                </p>
+              </div><!-- End of 3rd Row 2nd Column -->
+
+            </div><!-- End of panel-body -->
+          </div>
+           
+        </div>
+      </div><!-- End of Project Discription Row -->
+
+      <!-- EXPERIENCE REQUIREMENTS  -->
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default panel-spacing">
+            <div class="panel-heading">
+              <h3 class="panel-title">Experience Requirements</h3>  
+            </div>
+            <div class="panel-body">
+            <p>
+            <strong>Education:</strong>
+            <span>{{project.education}}</span>
+            </p> 
+            <p>
+              <strong>Experience:</strong>
+              <span>{{experience}}</span>
+            </p> 
+            </div> 
+          </div>         
+        </div>
+      </div>
+
+
+    </div><!-- end of ng-show -->
+ 
   </div><!-- END OF LEFT PANEL -->
+
 
  
   <!-- RIGHT PANEL -->
   <div class="col-md-4">
-  <div class="well" id="scrollArea"><!--Scroll-->
+    <div class="well" id="scrollArea"><!--Scroll-->
 
-    <a ng-repeat="projects in projects" ng-href="#/projects/{{projects.projectId}}">
-      <div class="list-group-item list-group-border list-styling">
-        <h4 class="project-title-styling">{{projects.projectDescription.project_title}}</h4>
-          
-          <div class="content-box-style">
-            <span>
-              <strong>Posted:</strong>
-              <span am-time-ago="projects.date_created"></span>
-            </span></br>
-            <span>
-              <strong>Start Date:</strong>
-              <span>{{projects.start_date}}</span>
-            </span></br>
-            <span>
-              <strong>Duration:</strong>
-              <span>{{projects.project_length}}</span>
-            </span></br>
-            <span>
-              <strong>Budget: </strong>
-              <span>{{'$' + projects.project_budget}}</span>
-            </span></br>
-            <p>
-              <strong>Location:</strong> 
-              <span> {{projects.location.city + ', ' + projects.location.state + ', ' + projects.location.country}}</span>
-            </p>
-          </div>
+      <a ng-repeat="projects in projects" ng-href="#/projects/{{projects.projectId}}">
+        <div class="list-group-item list-group-border list-styling">
+          <h4 class="titles-styling">{{projects.projectDescription.project_title}}</h4>
+            
+            <div class="content-box-style">
+              <span>
+                <strong>Posted:</strong>
+                <span am-time-ago="projects.date_created"></span>
+              </span></br>
+              <span>
+                <strong>Start Date:</strong>
+                <span>{{projects.start_date}}</span>
+              </span></br>
+              <span>
+                <strong>Duration:</strong>
+                <span>{{projects.project_length}}</span>
+              </span></br>
+              <span>
+                <strong>Budget: </strong>
+                <span>{{'$' + projects.project_budget}}</span>
+              </span></br>
+              <p>
+                <strong>Location:</strong> 
+                <span> {{projects.location.city + ', ' + projects.location.state + ', ' + projects.location.country}}</span>
+              </p>
+            </div>
 
-        <div class="list-group-separator"></div>        
-      </div>
-    </a>
-    
-  </div><!-- End Of Scroll -->
+          <div class="list-group-separator"></div>        
+        </div>
+      </a>
+      
+    </div><!-- End Of Scroll -->
   </div><!-- END OF RIGHT PANEL -->
-</div>
+</div><!-- End Of Row -->
