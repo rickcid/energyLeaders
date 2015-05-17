@@ -1,8 +1,8 @@
-/*
- * {
-  border: 1px dashed blue;
-}*/
 
+/* * {
+  border: 1px dashed blue;
+}
+*/
 
 /*** GLOBAL STYLES ***/
 
@@ -42,11 +42,60 @@ a, a:hover, a:focus {
 /*** MAIN PAGE LAYOUT ***/
 
 .pic-align {
+  background: black; opacity: .2;
+/*  position: relative;*/
+/*  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/energy-workers.jpg");;
+  background-repeat: no-repeat;*/
+/*  margin: 0px;
+  padding: 0px;
+  border: 0px;*/
+/*  height: 500px;*/
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.download-section {
+  width: 100%;
+  padding: 150px 0;
+  color: #fff;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/energy-workers.jpg") no-repeat center center scroll;
+  background-color: #000;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+
+
+.main-text-title {
+/*  position: relative;
+  bottom: 300px;*/
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  color: white;
+  font-size: 50px;
+  font-style: ultra-bold;
+  font-weight: 700;
+  po : 200px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.main-text-subTitle {
+/*  position: relative;
+  bottom: 300px;*/
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  color: white;
+  font-size: 20px;
+  font-style: ultra-bold;
+  font-weight: 500;
+  po : 200px;
+  font-family: 'Roboto', sans-serif;
+}
 
 /*** BROWSE/PROJECTS SCROLLING LIST ***/
 /* Content Box */
