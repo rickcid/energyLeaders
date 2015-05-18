@@ -5,18 +5,6 @@ app.config(function($routeProvider){
     .when('/', {
       templateUrl: 'views/main.html',
     })
-    .when('/consultants', {
-      templateUrl: 'views/consultantsTmpl.html',
-      controller: 'ConsultantCtrl'
-    })
-    .when('/consultants/:id', {
-      templateUrl: 'views/consultantProfileTmpl.html',
-      controller: 'ConsultantCtrl'
-    })
-    .when('/companies', {
-      templateUrl: 'views/companiesTmpl.html',
-      controller: 'CompanyCtrl'
-    })
     .when('/companies/:companyId', {
       templateUrl: 'views/companyProfileTmpl.html',
       controller: 'CompanyCtrl'
@@ -28,6 +16,18 @@ app.config(function($routeProvider){
     .when('/projects/:projectId', {
       templateUrl: 'views/browseProjectsTmpl.html',
       controller: 'BrowseProjectsCtrl'
+    })
+    .when('/consultants', {
+      templateUrl: 'views/consultantsTmpl.html',
+      controller: 'ConsultantCtrl'
+    })
+    .when('/consultants/:id', {
+      templateUrl: 'views/consultantProfileTmpl.html',
+      controller: 'ConsultantCtrl'
+    })
+    .when('/testing', {
+      templateUrl: 'views/registerCompanyTmpl.html',
+      controller: 'AuthCtrl'
     })
     .otherwise({
       redirectTo: '/'
