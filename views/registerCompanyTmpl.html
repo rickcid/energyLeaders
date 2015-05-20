@@ -1,95 +1,77 @@
 
-<span class="registry-form-center">
+<span class="center-content">
   
 
-<form class="form-horizontal col-md-8 well">
-  <fieldset>
-      <h3>Company Registration</h3>
-      <div class="form-group">
-          <label for="inputEmail" class="col-lg-2 control-label">Email</label>
-          <div class="col-lg-10">
-              <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-          </div>
+  <form class="col-xs-12 col-md-8" styles="border: 2px dashed red;">
+    <h3 class="title">Company Registration</h3><br>
+    <div class="container panel panel-default col-sm-12 .col-md-12">
+
+      <div class="panel-body">
+        <span><i class="mdi-communication-business"></i> Company Information</span><br><br>
+        <div class="input-group col-xs-12">
+          <label for="companyName" class="sr-only">Company Information</label>
+          <input type="text" class="form-control floating-label" id="input-underline" placeholder="Company Name">
+        </div><br>
+
+        <div class="input-group col-xs-12">
+          <label for="city" class="sr-only"></label>
+          <input type="text" class="form-control floating-label" id="input-underline" placeholder="City">
+        </div><br>
+
+        <div class="input-group col-xs-12">
+          <label for="state" class="sr-only"></label>        
+          <input type="text" class="form-control floating-label" id="input-underline" placeholder="State">
+        </div><br>
+
+        <div class="input-group col-xs-12">
+          <label for="zip_code" class="sr-only"></label>        
+          <input type="text" class="form-control floating-label" id="input-underline" placeholder="Zip Code">
+        </div><br>
+
+        <div class="input-group col-xs-12">
+          <label for="country" class="sr-only"></label>        
+          <input type="text" class="form-control floating-label" id="input-underline" placeholder="Country">
+        </div><br>
       </div>
-      <div class="form-group">
-          <label for="inputPassword" class="col-lg-2 control-label">Password</label>
-          <div class="col-lg-10">
-              <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> Check me out
-                  </label>
-                </div>
-              <div class="checkbox">
-                  <label>
-                      <input type="checkbox"> Checkbox
-                  </label>
-              </div>
-              <br>
-              <div class="togglebutton">
-                  <label>
-                      <input type="checkbox" checked=""> Toggle button
-                  </label>
-              </div>
-          </div>
+
+      <div class="panel-body">
+        <span><i class="fa fa-user fa-2x"></i> Representative Information</span><br><br>
+        <div class="input-group col-xs-12">
+          <label for="representative-first-name" class="sr-only"></label>
+          <input type="text" class="form-control floating-label" id="input-underline" placeholder="First Name">
+        </div><br>
+
+        <div class="input-group col-xs-12">
+          <label for="representative-last-name" class="sr-only"></label>
+          <input type="text" class="form-control floating-label" id="input-underline" placeholder="Last Name">
+        </div><br>
+
+        <div class="input-group col-xs-12">
+          <label for="phone_number" class="sr-only"></label>        
+          <input type="tel" class="form-control floating-label" id="input-underline" placeholder="Phone Number">
+        </div><br>
+
+        <div class="input-group col-xs-12">
+          <label for="email" class="sr-only"></label>        
+          <input type="email" class="form-control floating-label" id="input-underline" placeholder="Email">
+        </div><br>
+
+        <div class="input-group col-xs-12">
+          <label for="password" class="sr-only"></label>
+          <input type="password" class="form-control floating-label" id="input-underline" placeholder="Password" required>
+        </div><br>  
       </div>
-      <div class="form-group">
-          <label for="inputFile" class="col-lg-2 control-label">File</label>
-          <div class="col-lg-10">
-              <input type="text" readonly="" class="form-control floating-label" placeholder="Browse...">
-              <input type="file" id="inputFile" multiple="">
-          </div>
-      </div>
-      <div class="form-group">
-          <label for="textArea" class="col-lg-2 control-label">Textarea</label>
-          <div class="col-lg-10">
-              <textarea class="form-control" rows="3" id="textArea"></textarea>
-              <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
-          </div>
-      </div>
-      <div class="form-group">
-          <label class="col-lg-2 control-label">Radios</label>
-          <div class="col-lg-10">
-              <div class="radio radio-primary">
-                  <label>
-                      <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-                      Option one is this
-                  </label>
-              </div>
-              <div class="radio radio-primary">
-                  <label>
-                      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                      Option two can be something else
-                  </label>
-              </div>
-          </div>
-      </div>
-      <div class="form-group">
-          <label for="select" class="col-lg-2 control-label">Selects</label>
-          <div class="col-lg-10">
-              <select class="form-control" id="select">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-              </select>
-              <br>
-              <select multiple="" class="form-control">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-              </select>
-          </div>
-      </div>
-      <div class="form-group">
-          <div class="col-lg-10 col-lg-offset-2">
-              <button class="btn btn-default">Cancel</button>
-              <button type="submit" class="btn btn-primary">Submit</button>
-          </div>
-      </div>
-  </fieldset>
-</form>
+
+    <div class="center-content">
+      <input type="submit" value="Register" class="btn btn-danger">
+    </div><br><!-- End of Container -->
+  </form>
+
 </span>
+
+<script>
+  $(document).ready(function() {
+    // This command is used to initialize some elements and make them work properly
+    $.material.init();
+  });
+</script>
