@@ -23,6 +23,11 @@ app.service('UserService', function(){
 
   this.consultantData = [
     {
+      profilesData: [ 
+        { 
+          _Id: '24681' 
+        } 
+      ],
       first_name: 'John',
       last_name: 'Smith',
       email: 'john@example.com',
@@ -34,9 +39,13 @@ app.service('UserService', function(){
         country: "USA"
       },
       phone_number: "801-901-5595"
-
     },
     {
+      profilesData: [ 
+        { 
+          _Id: '98765' 
+        } 
+      ],
       first_name: 'Jane',
       last_name: 'Doe',
       email: 'Jane@example.com',
@@ -50,6 +59,11 @@ app.service('UserService', function(){
       phone_number: "801-924-5555"
     },
     {
+      profilesData: [ 
+        { 
+          _Id: '54321'
+        } 
+      ],
       first_name: 'Sally',
       last_name: 'Jones',
       email: 'Sally@example.com',
@@ -63,6 +77,11 @@ app.service('UserService', function(){
       phone_number: "801-444-5555"
     },
     {
+      profilesData: [ 
+        { 
+          Id: '12345' 
+        } 
+      ],
       first_name: 'Jose',
       last_name: 'Garcia',
       email: 'Jose@example.com',
@@ -76,6 +95,35 @@ app.service('UserService', function(){
       phone_number: "801-234-5555"
     }
   ];
+
+
+
+  this.profilesData = [
+    { 
+      Id: '12345',
+      degrees: { 
+        deg1: 'B.S.',
+        deg2: 'MBA',
+        deg3: 'Phd'
+      },
+      major: {
+        deg1: 'Accounting'
+      }
+    },
+    {
+      Id: '54321',
+      degrees: {
+        deg1: 'B.A.',
+        deg2: 'M.A.'
+       },
+      major: {
+        deg1: "Finance",
+        deg2: "Economics"
+      }
+    }
+  ];
+
+
 
   this.companyData = [
     {

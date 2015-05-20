@@ -25,9 +25,18 @@ app.config(function($routeProvider){
       templateUrl: 'views/consultantProfileTmpl.html',
       controller: 'ConsultantCtrl'
     })
-    .when('/testing', {
+    .when('/register/company', {
       templateUrl: 'views/registerCompanyTmpl.html',
       controller: 'AuthCtrl'
+    })
+    .when('/register/consultant', {
+      templateUrl: 'views/registerConsultantTmpl.html',
+      controller: 'AuthCtrl'
+    })
+    //Needs to be assigned Authed id
+    .when('/consultant/profile/:userId', {
+      templateUrl: 'views/consultantProfileTmpl.html',
+      controller: 'ConsultantCtrl'
     })
     .otherwise({
       redirectTo: '/'

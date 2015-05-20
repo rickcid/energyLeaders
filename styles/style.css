@@ -1,8 +1,8 @@
 
 /* * {
   border: 1px dashed blue;
-}*/
-
+}
+*/
 
 /*** GLOBAL STYLES ***/
 
@@ -25,6 +25,19 @@ a, a:hover, a:focus {
   padding-bottom: 5px;
 }
 
+/* Centers Text Titles */
+.title {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Centers Content */
+
+.center-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+}
 
 /*** NAVBAR ***/
 .brand-style {
@@ -75,6 +88,10 @@ a, a:hover, a:focus {
   font-family: 'Roboto', sans-serif;
 }
 
+.main-bottom-spacing {
+  margin-top: 100px;
+}
+
 /*** BROWSE/PROJECTS SCROLLING LIST ***/
 /* Content Box */
 #scrollArea {
@@ -117,19 +134,18 @@ a, a:hover, a:focus {
   background-color: #f1f1f1;
 }
 
-.title {
-  text-align: center;
-}
-
 .char-left-alignment {
   padding-left: 0;
 }
 
 /**** REGISTER COMPANY VIEW ***/
 
-.registry-form-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;  
-
+.input-underline {
+  border-bottom: 3px solid #ECECEC;
 }
+
+#input-underline {
+  border-bottom: 3px solid #ECECEC;
+}
+
+
