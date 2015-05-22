@@ -1,14 +1,137 @@
 
-Consultants:
-<p>{{consultants}}</p>
-Consultant:
-<p>{{consultant}}</p>
-Profiles:
-<p>{{profiles}}</p>
-Profile:
-selectedProfileData
-<p>{{profile}}</p>
+<div class="center-content">
+  
+  <div class="col-xs-12 col-sm-10 col-md-8">
+    <!-- CONSULTANT DETAILS -->
+    <div no-ng-show="!listMode">
+      <h2 class="titles-styling">{{consultant.first_name + ' ' + consultant.last_name}}</h2>
+      
+      <div class="row"><!-- TOP PANEL -->
 
-Degrees:
-function3
-<p>{{allDegrees}}</p>
+        <div class="col-xs-12 col-sm-12 col-md-6">  
+          <div classs="row">
+            <div class="thumbnail col-xs-4 col-sm-4 col-md-6">
+              <img class="img-circle" src="/images/profilepic.jpg" alt="...">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-md-6 profile-info-spacing">
+          <span>
+            <span class="profile-title-style">Location:</span> 
+            <span> {{consultant.location.city + ', ' + consultant.location.state + ', ' + consultant.location.country}}</span>
+          </span><br>
+          <span>
+            <strong>Member Since:</strong> 
+            <span> {{ consultant.date_created | amDateFormat: 'dddd, MMMM Do YYYY'}}</span>
+          </span><br>
+          <span>
+            <strong>Total Completed Projects:</strong>
+            <span> 3 Projects</span>
+          </span><br><br>
+          <span>
+            <strong>Recommended Rating:</strong>
+            <span> 9/10 <i class="fa fa-star fa-lg star-color"></i></span>
+          </span>
+        </div>
+
+      </div><!-- End of TOP PANEL/Row -->
+
+      <!-- CONSULTANT CONTENT PANEL -->
+      <div class="row">
+        <div class="col-md-12">
+
+          <div class="panel panel-default panel-spacing">
+            <div class="panel-heading">
+              <h3 class="panel-title">Summary</h3>  
+            </div>
+            <div class="panel-body">
+              {{profile.summary}}
+            </div> 
+          </div>
+
+          <!-- EDUCATION PANEL -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Education</h3>  
+            </div>
+            <!-- EDUCATION PANEL BODY -->
+            <div class="panel-body">
+
+              <!-- INSTITUTION BATCH -->
+              <div ng-repeat="schools in schools">              
+                <div class="col-md-12 char-left-alignment input-underline">
+                  <span class="panel-batch-title">{{schools.school}}</span>
+                </div>
+                <!-- DEGREE COLUMN -->
+                <div class="col-xs-6 col-md-6 char-left-alignment batch-item-spacing">  
+                  <p>
+                    <span>{{schools.deg + ', ' + schools.maj}}</span>
+                  </p>
+                </div>
+                <!-- GRAD YEAR COLUMN -->
+                <div class="col-xs-6 col-md-6 batch-item-spacing">
+                  <p class="char-right-alignment">
+                    <span>Graduated: {{schools.year}}</span>
+                  </p>
+                </div>
+              </div><!--End Institution Batch -->      
+
+            </div><!-- End of Education panel-body -->
+          </div><!-- End of Education panel-default -->
+
+          <!-- SKILLS PANEL -->
+          <div class="panel panel-default">
+              <div class="panel-body">
+                  <span><strong>Skills:</strong>{{skills}}</span>
+              </div>
+          </div>
+
+
+
+          <!-- WORK EXPERIENCE PANEL -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Work Experience</h3>
+            </div>
+            <!-- WORK PANEL BODY -->
+            <div class="panel-body">
+              
+              <!-- WORK BATCH -->
+              <div ng-repeat="workHistory in workHistory">
+                <div class="col-md-12 char-left-alignment input-underline">
+                  <span class="panel-batch-title">{{workHistory.employer_name}}</span>
+                </div>
+                <!-- WORK POSITON COLUMN -->
+                <div class="col-xs-12 col-md-6 char-left-alignment">  
+                  <p>
+                    <span>{{workHistory.position_title}} | {{workHistory.location_city}}, {{workHistory.location_state}}</span>
+                  </p>
+                </div>
+                <!-- WORK YEARS COLUMN -->
+                <div class="col-xs-12 col-md-6">
+                  <p class="char-right-alignment">
+                    <span>{{workHistory.employment_start_date}}  to  {{workHistory.employment_end_date}}</span>
+                  </p>
+                </div>
+                <!-- POSITION SUMMARY -->
+                <div class="col-md12 batch-item-spacing">
+                  <p>
+                    <span>{{workHistory.position_summary}}</span>
+                  </p>
+                </div>
+
+              </div><!-- End of Work Batch -->
+
+            </div><!-- End of Work Panel Body -->
+          </div><!-- End of Work Experience Panel -->
+
+        </div><!-- End of Content Panel col-sizing -->
+      </div><!-- End of Content Panel Row -->
+
+
+    </div><!-- end of ng-show -->
+  </div>
+</div>
+ 
+
