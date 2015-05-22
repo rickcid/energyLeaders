@@ -8,7 +8,7 @@ app.service('UserService', function(){
     for (var prop in obj) {
       allItems = allItems + ', ' + obj[prop];
     }
-    return allItems.replace(',', '');
+    return allItems.replace(',', ' ');
   };
 
 
@@ -23,9 +23,10 @@ app.service('UserService', function(){
 
   this.consultantData = [
     {
+      //reference
       profilesData: [ 
         { 
-          _Id: '24681' 
+          Id: '24681' 
         } 
       ],
       first_name: 'John',
@@ -38,12 +39,14 @@ app.service('UserService', function(){
         state: "Utah",
         country: "USA"
       },
-      phone_number: "801-901-5595"
+      phone_number: "801-901-5595",
+      date_created: '2015-05-01T16:06:58.970Z'
     },
     {
       profilesData: [ 
         { 
-          _Id: '98765' 
+          //reference
+          Id: '54321' 
         } 
       ],
       first_name: 'Jane',
@@ -56,12 +59,14 @@ app.service('UserService', function(){
         state: "Utah",
         country: "USA"
       },
-      phone_number: "801-924-5555"
+      phone_number: "801-924-5555",
+      date_created: '2014-08-01T16:06:58.970Z'
     },
     {
+      //reference
       profilesData: [ 
         { 
-          _Id: '54321'
+          Id: '98765'
         } 
       ],
       first_name: 'Sally',
@@ -74,11 +79,13 @@ app.service('UserService', function(){
         state: "Utah",
         country: "USA"
       },
-      phone_number: "801-444-5555"
+      phone_number: "801-444-5555",
+      date_created: '2015-01-01T16:06:58.970Z'
     },
     {
       profilesData: [ 
         { 
+          //reference
           Id: '12345' 
         } 
       ],
@@ -92,7 +99,8 @@ app.service('UserService', function(){
         state: "Utah",
         country: "USA"
       },
-      phone_number: "801-234-5555"
+      phone_number: "801-234-5555",
+      date_created: '2015-03-01T16:06:58.970Z'
     }
   ];
 
@@ -101,28 +109,189 @@ app.service('UserService', function(){
   this.profilesData = [
     { 
       Id: '12345',
-      degrees: { 
-        deg1: 'B.S.',
-        deg2: 'MBA',
-        deg3: 'Phd'
+      skills: 
+      {
+        skill1: 'Six Sigma',
+        skill2: 'Agile',
+        skill3: 'CPM'
       },
-      major: {
-        deg1: 'Accounting'
-      }
+      // degrees: { 
+      //   deg1: 'B.S.',
+      //   deg2: 'MBA',
+      //   deg3: 'Phd'
+      // },
+      // major: {
+      //   deg1: 'B.A.',
+      //   deg2: 'MBA'
+      // },
+      schools: 
+      [
+        {
+          school: "BYU",
+          deg: "B.S.",
+          maj: "Accounting",
+          year: "2001" 
+        },
+        {
+          school: "University of Arizona",
+          deg: "MBA",
+          maj: "Global Business",
+          year: "2005"
+
+        }
+      ],       
+      summary: 'A professional with 10 years expereince within the Oil and Gas industry.  Highly experenced with efficiency training and team productivity managment and organizational change and design.',
+      work_history: 
+      [
+        {
+          employer_name: 'Gasket Consulting Group',
+          position_title: 'Operation Manager',
+          location_city: 'Houston',
+          location_state:'Texas',
+          location_country: 'USA',
+          employment_start_date: '2002-10-12',
+          employment_end_date: '2005-09-10',
+          position_summary: 'Responsible for managing the profitability of several oil and gas projects. Managed the integration of several pipeline projects, with budget\'s of $350 Million'
+        },
+        {
+          employer_name: 'Clampet\'s Oil',
+          position_title: 'General Manager',
+          location_city: 'Nashville',
+          location_state:'Tenessee',
+          location_country: 'USA',
+          employment_start_date: '2005-10-01',
+          employment_end_date: '2010-09-01',
+          position_summary: 'Managed the oil assets for a group of oil land owners from Tennessee.  Provided all aspects of workforce managment and pipeline maintenance managment'
+        },
+        {
+          employer_name: 'Pipeline Runner',
+          position_title: 'performance Manager',
+          location_city: 'Houston',
+          location_state:'Texas',
+          location_country: 'USA',
+          employment_start_date: '2010-10-01',
+          employment_end_date: 'Present',
+          position_summary: 'Perform organizational change and workforce optimization consulting. Focusing on developing workshops using exclusive and proven tecnhniques for optimization.'
+        }
+      ]
     },
     {
       Id: '54321',
-      degrees: {
-        deg1: 'B.A.',
-        deg2: 'M.A.'
-       },
-      major: {
-        deg1: "Finance",
-        deg2: "Economics"
-      }
+      //refrenced because need to enable search capabilities
+      skills: 
+      {
+        skill1: 'Six Sigma',
+        skill2: 'Agile',
+        skill3: 'CPM'
+      },
+      // degrees: {
+      //   deg1: 'B.A.',
+      //   deg2: 'M.A.'
+      //  },
+      // major: {
+      //   deg1: "Finance",
+      //   deg2: "Economics"
+      // },
+      // institutions: {
+      //   school1: "University of Utah",
+      //   school2: "UCLA"
+      // },
+      //  grad_year: {
+      //   year1: "2002",
+      //   year2: "2008"
+      // },
+      //Grouped object of education data
+      schools: 
+      [
+        {
+          school: "BYU",
+          deg: "B.S.",
+          maj: "Accounting",
+          year: "2001" 
+        },
+        {
+          school: "University of Arizona",
+          deg: "MBA",
+          maj: "Global Business",
+          year: "2005"
+
+        }
+      ],       
+      summary: 'A professional with 10 years experience within the Oil and Gas industry.  Highly experenced with efficiency training and team productivity managment and organizational change and design.',
+      work_history: 
+      [
+        {
+          employer_name: 'Oilers Workers Group',
+          position_title: 'Implementation Manager',
+          location_city: 'Houston',
+          location_state:'Texas',
+          location_country: 'USA',
+          employment_start_date: '10/2001',
+          employment_end_date: '10/2008',
+          position_summary: 'Managed several large scale production oil and gas projects. Performed several years of performance managment training for lower level managers and was responsible for performance managment tracking throughout the production organization.'
+        },
+        {
+          employer_name: 'Pipeline Runner',
+          position_title: 'Senior Project Manager',
+          location_city: 'Houston',
+          location_state:'Texas',
+          location_country: 'USA',
+          employment_start_date: '10/2008',
+          employment_end_date: 'Present',
+          position_summary: 'Perform organizational change and workforce optimization consulting. Focusing on developing workshops using exclusive and proven tecnhniques for optimization.'
+        }
+      ]
     }
   ];
 
+
+  // this.businessmajorData = [
+  //   {
+  //     id: '13245',
+  //     maj: [{name: 'Economics'}, {name: 'Accounting'}],
+  //     users: [{objectid ref user}]
+
+  //   },
+  //   {
+  //     id: '24681',
+  //     maj1: 'Finance',
+  //     maj2: 'Economics'
+  //   }
+  // ];
+
+  // this.engineeringmajorData = [
+  //   {
+  //     id: '13245',
+  //     maj1: 'Finance',
+  //     maj2: 'Economics',
+  //     maj3: 'Global Business'
+  //   },
+  //   {
+  //     id: '24681',
+  //     maj1: 'Finance',
+  //     maj2: 'Economics'
+  //   }
+  // ];
+
+
+  // this.degreeData = [
+  //   {
+  //     id: '13245'
+  //     deg1: 'B.A./B.S.',
+  //     deg2: 'M.A.',
+  //     deg3: 'M.B.A.',
+  //     deg4: 'Phd'
+  //   },
+  //   {
+  //     id: '24681'
+  //     deg1: 'B.A./B.S.',
+  //     deg2: 'M.A.'
+  //   }
+  // ];
+
+  // this.majorData = [
+
+  // ];
 
 
   this.companyData = [
