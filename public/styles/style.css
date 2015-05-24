@@ -2,8 +2,8 @@
  * {
   border: 1px dashed blue;
 }
-*/
 
+*/
 /*** GLOBAL STYLES ***/
 
 
@@ -103,14 +103,14 @@ a, a:hover, a:focus {
   font-family: 'Roboto', sans-serif;
 }
 
-.main-bottom-spacing {
-  margin-top: 100px;
+.spacing-between-buttons {
+  padding: 8px;
 }
 
 /*** BROWSE/PROJECTS SCROLLING LIST ***/
 /* Content Box */
 #scrollArea {
-  height: 700px;
+  height: 750px;
   overflow: auto;
 }
 
@@ -151,8 +151,14 @@ a, a:hover, a:focus {
 
 
 
-/**** REGISTER COMPANY VIEW ***/
+/*** REGISTER CONSULTANT & COMPANY VIEWS ***/
 
+.registration-panel-top-spacing {
+  padding-top: 40px;
+}
+
+
+/*** INPUT LINE FOR ALL FORMS **/
 #input-underline {
   border-bottom: 2px solid #ECECEC;
 }
@@ -168,6 +174,7 @@ a, a:hover, a:focus {
 
 .star-color {
   color: gold;
+  margin-left: 2px;
 }
 
 .profile-title-style {
@@ -184,4 +191,11 @@ a, a:hover, a:focus {
 
 .batch-item-spacing {
   margin-bottom: 25px;
+}
+
+/** UPDATE CONSULTANT PROFILE VIEW **/
+
+.update-cons-elements {
+  padding-left: 5px;
+  color: grey;
 }

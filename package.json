@@ -1,0 +1,27 @@
+{
+  "name": "energyLeaders",
+  "version": "1.0.0",
+  "description": "Energy Project Exchange",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rickcid/energyLeaders.git"
+  },
+  "author": "Hispand",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rickcid/energyLeaders/issues"
+  },
+  "homepage": "https://github.com/rickcid/energyLeaders",
+  "dependencies": {
+    "body-parser": "^1.12.4",
+    "express": "^4.12.4",
+    "express-session": "^1.11.2",
+    "mongoose": "^4.0.3",
+    "passport": "^0.2.2"
+  }
+}
