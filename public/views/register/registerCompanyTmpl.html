@@ -1,0 +1,44 @@
+
+<span class="center-content">
+  
+
+  <form ng-submit="registerCompanyRep(company_representative)" class="col-xs-12 col-md-8">
+    <h3 class="title">Company Representative Registration</h3><br>
+    <div class="container panel panel-default col-sm-12 .col-md-12">
+      
+      <div class="panel-body registration-panel-top-spacing">
+        <div class="input-group col-xs-12">
+          <label for="representative-first-name" class="sr-only"></label>
+          <input type="text" ng-model="company_representative.first_name" class="form-control floating-label" id="input-underline" placeholder="First Name" required>
+        </div><br>
+
+        <div class="input-group col-xs-12">
+          <label for="representative-last-name" class="sr-only"></label>
+          <input type="text" ng-model="company_representative.last_name" class="form-control floating-label" id="input-underline" placeholder="Last Name" required>
+        </div><br>
+
+
+        <div class="input-group col-xs-12">
+          <label for="email" class="sr-only"></label>        
+          <input type="email" ng-model="company_representative.email" class="form-control floating-label" id="input-underline" placeholder="Email" required>
+        </div><br>
+
+        <div class="input-group col-xs-12">
+          <label for="password" class="sr-only"></label>
+          <input type="password" ng-model="company_representative.password" class="form-control floating-label" id="input-underline" placeholder="Password" required>
+        </div><br>
+      </div>
+
+    <div class="center-content">
+      <input type="submit" value="Register" class="btn btn-danger">
+    </div><br><!-- End of Container -->
+  </form>
+
+</span>
+
+<script>
+  $(document).ready(function() {
+    // This command is used to initialize some elements and make them work properly
+    $.material.init();
+  });
+</script>

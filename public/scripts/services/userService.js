@@ -1,7 +1,22 @@
 var app = angular.module('energyLeaders');
 
 
-app.service('UserService', function(){
+app.service('UserService', function($http, $q) {
+
+  this.registerConsultant = function(consultant) {
+    var deferred = $q.defer();
+    $http({
+      method: 'POST',
+      url: '/api/register/consultant',
+      data: consultant
+    }).then(function(response) {
+      deferred.resolve(response.data);
+    });
+    return deferred.promise;
+  };
+
+
+
 
   this.displayAll = function(obj) {
     var allItems = '';

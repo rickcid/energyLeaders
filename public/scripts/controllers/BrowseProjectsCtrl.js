@@ -3,10 +3,10 @@ var app = angular.module('energyLeaders');
 app.controller('BrowseProjectsCtrl', function($scope, $routeParams, UserService) {
 
   var allProjectsData = UserService.projectData;
-  console.log('All Projects Data:', $scope.projects);
+  // console.log('All Projects Data:', $scope.projects);
 
   var selectedProjectData = UserService.projectData[$routeParams.projectId];
-  console.log("routeParams.projectId:", $routeParams.projectId);
+  // console.log("routeParams.projectId:", $routeParams.projectId);
 
   $scope.listMode = true;
 
