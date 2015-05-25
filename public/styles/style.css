@@ -2,8 +2,8 @@
  * {
   border: 1px dashed blue;
 }
-
 */
+
 /*** GLOBAL STYLES ***/
 
 
@@ -49,6 +49,7 @@ a, a:hover, a:focus {
   text-align: right;
 }
 
+
 /* Creates Border Underline */
 .input-underline {
   border-bottom: 3px solid #ECECEC;
@@ -64,7 +65,7 @@ a, a:hover, a:focus {
 }
 
 .background {
-  background-color: #3b5bb3; /*#4E5D6C;/*#3B4146; #311B92;*/
+  background-color: #3b5bb3; #4E5D6C; #3B4146; #311B92;*/
 }
 
 /*** MAIN PAGE LAYOUT ***/
@@ -158,10 +159,16 @@ a, a:hover, a:focus {
 }
 
 
-/*** INPUT LINE FOR ALL FORMS **/
-#input-underline {
+
+/*** INPUT UNDERLINE FOR ALL FORMS **/
+#form-input-underline {
   border-bottom: 2px solid #ECECEC;
 }
+
+.row-bottom-spacing {
+  margin-bottom: 2px;
+}
+
 
 /*** CONSULTANT PROFILE VIEW ***/
 .location-spacing {
@@ -185,7 +192,7 @@ a, a:hover, a:focus {
   margin-top: 30px;
 }
 
-.panel-batch-title {
+.panel-title {
   font-size: 18px;
 }
 
@@ -193,9 +200,17 @@ a, a:hover, a:focus {
   margin-bottom: 25px;
 }
 
-/** UPDATE CONSULTANT PROFILE VIEW **/
+/** UPDATE CONSULTANT VIEW **/
+
+.panel-outline-color {
+  box-shadow: 0 0 30px #3F51B5;
+}
+
+
+/** UPDATE CONSULTANT CONTACT INFO VIEW **/
 
 .update-cons-elements {
   padding-left: 5px;
   color: grey;
 }
+

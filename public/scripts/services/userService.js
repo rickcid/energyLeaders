@@ -241,7 +241,7 @@ app.service('UserService', function($http, $q) {
           location_city: 'Houston',
           location_state:'Texas',
           location_country: 'USA',
-          employment_start_date: '10/2001',
+          employment_start_date: '1432576176717',
           employment_end_date: '10/2008',
           position_summary: 'Managed several large scale production oil and gas projects. Performed several years of performance managment training for lower level managers and was responsible for performance managment tracking throughout the production organization.'
         },
@@ -251,7 +251,7 @@ app.service('UserService', function($http, $q) {
           location_city: 'Houston',
           location_state:'Texas',
           location_country: 'USA',
-          employment_start_date: '10/2008',
+          employment_start_date: '01/10/2008',
           employment_end_date: 'Present',
           position_summary: 'Perform organizational change and workforce optimization consulting. Focusing on developing workshops using exclusive and proven tecnhniques for optimization.'
         }
