@@ -27,6 +27,7 @@ app.controller('ConsultantCtrl', function($scope, $routeParams, UserService) {
   $scope.profile = profileData;
   $scope.schools = schoolsData;
   $scope.workHistory = workHistoryData;
+  $scope.isCollapsed = true;
 
 
   if ($routeParams.userId) {

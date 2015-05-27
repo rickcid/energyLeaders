@@ -49,11 +49,11 @@ a, a:hover, a:focus {
   text-align: right;
 }
 
-
 /* Creates Border Underline */
 .input-underline {
   border-bottom: 3px solid #ECECEC;
 }
+
 
 /*** NAVBAR ***/
 .brand-style {
@@ -64,9 +64,10 @@ a, a:hover, a:focus {
   padding-top: 80px;
 }
 
-.background {
-  background-color: #3b5bb3; #4E5D6C; #3B4146; #311B92;*/
+.navbar.navbar {
+  background-color: #3F51B5;
 }
+
 
 /*** MAIN PAGE LAYOUT ***/
 .main-background-section {
@@ -159,7 +160,6 @@ a, a:hover, a:focus {
 }
 
 
-
 /*** INPUT UNDERLINE FOR ALL FORMS **/
 #form-input-underline {
   border-bottom: 2px solid #ECECEC;
@@ -194,18 +194,43 @@ a, a:hover, a:focus {
 
 .panel-title {
   font-size: 18px;
+  color: white;
+}
+
+.panel-sub-title {
+  font-size: 18px;
+  color: black;
 }
 
 .batch-item-spacing {
-  margin-bottom: 25px;
+  margin-bottom: 10px;
 }
 
-/** UPDATE CONSULTANT VIEW **/
 
-.panel-outline-color {
+/*** PANELS ***/
+/*** UPDATE CONSULTANT VIEW ***/
+#panel-heading-color {
+  background-color: #3F51B5;
+}
+
+.NO-panel-outline-color {
   box-shadow: 0 0 30px #3F51B5;
 }
 
+#button-color {
+  background-color: #C5CAE9;
+  color: #3F51B5;
+}
+
+/*** MODALS ***/
+#modal-panel-heading-color {
+  background-color: #C5CAE9;
+}
+
+.modal-sub-title {
+  font-size: 16px;
+  color: #3F51B5;
+}
 
 /** UPDATE CONSULTANT CONTACT INFO VIEW **/
 
@@ -213,4 +238,10 @@ a, a:hover, a:focus {
   padding-left: 5px;
   color: grey;
 }
+
+.edit-text-color {
+  color: #3F51B5;
+}
+
+
 

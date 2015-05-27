@@ -139,7 +139,9 @@ app.service('UserService', function($http, $q) {
       //   deg1: 'B.A.',
       //   deg2: 'MBA'
       // },
-      schools: 
+
+
+        schools: 
       [
         {
           school: "BYU",
@@ -154,7 +156,7 @@ app.service('UserService', function($http, $q) {
           year: "2005"
 
         }
-      ],       
+      ],    
       summary: 'A professional with 10 years expereince within the Oil and Gas industry.  Highly experenced with efficiency training and team productivity managment and organizational change and design.',
       work_history: 
       [
@@ -216,7 +218,7 @@ app.service('UserService', function($http, $q) {
       //   year2: "2008"
       // },
       //Grouped object of education data
-      schools: 
+      schools:
       [
         {
           school: "BYU",
@@ -231,7 +233,7 @@ app.service('UserService', function($http, $q) {
           year: "2005"
 
         }
-      ],       
+      ],      
       summary: 'A professional with 10 years experience within the Oil and Gas industry.  Highly experenced with efficiency training and team productivity managment and organizational change and design.',
       work_history: 
       [
@@ -241,8 +243,8 @@ app.service('UserService', function($http, $q) {
           location_city: 'Houston',
           location_state:'Texas',
           location_country: 'USA',
-          employment_start_date: '1432576176717',
-          employment_end_date: '10/2008',
+          employment_start_date: '02/2001',
+          employment_end_date: '01/2008',
           position_summary: 'Managed several large scale production oil and gas projects. Performed several years of performance managment training for lower level managers and was responsible for performance managment tracking throughout the production organization.'
         },
         {
@@ -251,7 +253,7 @@ app.service('UserService', function($http, $q) {
           location_city: 'Houston',
           location_state:'Texas',
           location_country: 'USA',
-          employment_start_date: '01/10/2008',
+          employment_start_date: '01/2008',
           employment_end_date: 'Present',
           position_summary: 'Perform organizational change and workforce optimization consulting. Focusing on developing workshops using exclusive and proven tecnhniques for optimization.'
         }

@@ -1,4 +1,4 @@
-var app = angular.module('energyLeaders', ['ngRoute', 'toaster', 'angularMoment']);
+var app = angular.module('energyLeaders', ['ngRoute', 'toaster', 'angularMoment', 'ui.bootstrap']);
 
 app.config(function($routeProvider){
   $routeProvider

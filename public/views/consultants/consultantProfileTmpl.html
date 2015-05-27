@@ -42,7 +42,7 @@
         <div class="col-md-12">
 
           <div class="panel panel-default panel-spacing">
-            <div class="panel-heading">
+            <div class="panel-heading" id="panel-heading-color">
               <h3 class="panel-title">Summary</h3>  
             </div>
             <div class="panel-body">
@@ -52,7 +52,7 @@
 
           <!-- EDUCATION PANEL -->
           <div class="panel panel-default">
-            <div class="panel-heading">
+            <div class="panel-heading" id="panel-heading-color">
               <h3 class="panel-title">Education</h3>  
             </div>
             <!-- EDUCATION PANEL BODY -->
@@ -61,18 +61,18 @@
               <!-- INSTITUTION BATCH -->
               <div ng-repeat="schools in schools">              
                 <div class="col-md-12 char-left-alignment input-underline">
-                  <span class="panel-batch-title">{{schools.school}}</span>
+                  <span class="panel-sub-title">{{schools.school}}</span>
                 </div>
                 <!-- DEGREE COLUMN -->
                 <div class="col-xs-6 col-md-6 char-left-alignment batch-item-spacing">  
                   <p>
-                    <span>{{schools.deg + ', ' + schools.maj}}</span>
+                    <span ng-hide="!schools.deg" >{{schools.deg + ', ' + schools.maj}}</span>
                   </p>
                 </div>
                 <!-- GRAD YEAR COLUMN -->
                 <div class="col-xs-6 col-md-6 batch-item-spacing">
                   <p class="char-right-alignment">
-                    <span>Graduated: {{schools.year}}</span>
+                    <span ng-hide="!schools.year">Graduated: {{schools.year}}</span>
                   </p>
                 </div>
               </div><!--End Institution Batch -->      
@@ -91,7 +91,7 @@
 
           <!-- WORK EXPERIENCE PANEL -->
           <div class="panel panel-default">
-            <div class="panel-heading">
+            <div class="panel-heading" id="panel-heading-color">
               <h3 class="panel-title">Work Experience</h3>
             </div>
             <!-- WORK PANEL BODY -->
@@ -100,7 +100,7 @@
               <!-- WORK BATCH -->
               <div ng-repeat="workHistory in workHistory">
                 <div class="col-md-12 char-left-alignment input-underline">
-                  <span class="panel-batch-title">{{workHistory.employer_name}}</span>
+                  <span class="panel-sub-title">{{workHistory.employer_name}}</span>
                 </div>
                 <!-- WORK POSITON COLUMN -->
                 <div class="col-xs-12 col-md-6 char-left-alignment">  
