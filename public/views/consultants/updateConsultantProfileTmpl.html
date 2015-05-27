@@ -4,7 +4,6 @@
   <div class="col-xs-12 col-sm-10 col-md-8">
     <!-- CONSULTANT DETAILS -->
     <div no-ng-show="!listMode">
-      <h1 style="color: #3F51B5;">UPDATE PROFILE</h1>
       <h2 class="titles-styling">{{consultant.first_name + ' ' + consultant.last_name}}</h2>
       
       <div class="row"><!-- TOP PANEL -->
@@ -42,112 +41,83 @@
       <div class="row">
         <div class="col-md-12">
 
-
-
           <div class="panel panel-default panel-spacing panel-outline-color">
-            <div class="panel-heading">
-              <h3 class="panel-title">Summary <span style="color: gray;">(220 characters max)</span></h3>  
+            <div class="panel-heading" id="panel-heading-color">
+              <h3 class="panel-title">Summary</h3>  
             </div>
             <div class="panel-body">
+              {{profile.summary}}
 
-              <div class="input-group col-xs-12">
-                <label for="summary" class="sr-only">Summary:</label>
-                  <textarea type="text" class="form-control floting-label" ng-model="profile.summary" rows="3" maxlength="220" id="form-input-underline">{{profile.summary}}</textarea>
+              <!-- EDIT BUTTON -->
+              <div ng-hide="!profile.summary" class="col-xs-12 col-md-12 char-left-alignment">
+                <a class="btn btn-flat btn-default btn-sm" data-toggle="modal" data-target="#editSummaryModal"><i class="fa fa-pencil-square-o fa-lg edit-text-color"></i><span class="edit-text-color">Edit<span></a>
               </div>
+
+              <!-- TOGGLE MODAL BUTTON -->
+              <a NO-ng-hide="profile.summary" id="button-color" class="col-xs-12 col-md-12 btn btn-default btn-raised btn-sm" data-toggle="modal" data-target="#addSummaryModal"><i class="fa fa-plus edit-text-color"></i><span class="edit-text-color"> Add<span></a>     
 
             </div> 
           </div>
 
-
-
           <!-- EDUCATION PANEL -->
           <div class="panel panel-default panel-outline-color">
-            <div class="panel-heading">
+            <div class="panel-heading" id="panel-heading-color">
               <h3 class="panel-title">Education</h3>  
             </div>
             <!-- EDUCATION PANEL BODY -->
             <div class="panel-body">
 
               <!-- INSTITUTION BATCH -->
-              <div ng-repeat="schools in schools"> 
+              <div ng-repeat="schools in schools">
 
-                <div class="col-md-12 char-left-alignment">
-                  <div class="input-group col-xs-12">
-                    <label for="school" class="sr-only"></label>
-                    <input type="text" class="form-control floating-label panel-title" id="form-input-underline" placeholder="{{schools.school}}">
-                  </div>
+                <div class="col-md-12 char-left-alignment input-underline">
+                  <span class="panel-sub-title">{{schools.school}}</span>
                 </div>
-
 
                 <!-- DEGREE COLUMN -->
-                <div class="col-xs-12 col-md-2 char-left-alignment">
-                  <div class="input-group col-xs-12" id="form-input-underline">
-
-                    <label for="degree" class="sr-only"></label>
-                    <select class="form-control" id="select" ng-model="schools.deg" >
-                      <option value="B.A.">B.A.</option>
-                      <option value="B.S.">B.S.</option>
-                      <option value="M.A.">M.A.</option>
-                      <option value="M.S.">M.S.</option>
-                      <option value="MBA">MBA</option>
-                      <option value="Phd">Phd</option>
-                    </select>                    
-
-                  </div> 
+                <div class="col-xs-6 col-md-6 char-left-alignment">  
+                    <span ng-hide="!schools.deg">{{schools.deg + ', ' + schools.maj}}</span>
                 </div>
-
-                <div class="col-xs-12 col-md-7 char-left-alignment">
-                  <div class="input-group col-xs-12">
-                    <label for="major" class="sr-only"></label> 
-                    <input type="text" class="form-control floating-label" id="form-input-underline" placeholder="{{schools.maj}}">
-                  </div>
-                </div>
-
-
 
                 <!-- GRAD YEAR COLUMN -->
+                <div class="col-xs-6 col-md-6 char-right-alignment">
+                    <span ng-hide="!schools.year">Graduated: {{schools.year}}</span>
+                </div>
 
-                <div class="col-xs-12 col-md-3 char-right-alignment">
-                  <div class="input-group col-xs-12" id="form-input-underline">
-
-                    <label for="grad_year" class="sr-only"></label>
-                    <select class="form-control" id="select" ng-model="schools.year" >
-                      <option value="1999">1999</option>
-                      <option value="2000">2000</option>
-                      <option value="2001">2001</option>
-                      <option value="2002">2002</option>
-                      <option value="2003">2003</option>
-                      <option value="2004">2004</option>
-                      <option value="2005">2005</option>
-                      <option value="2006">2006</option>
-                      <option value="2007">2007</option>
-                      <option value="2008">2008</option>
-                      <option value="2009">2009</option>
-                      <option value="2010">2010</option>
-                    </select> 
-
-                  </div>
+                <!-- EDIT BUTTON -->
+                <div class="col-xs-12 col-md-12 char-left-alignment batch-item-spacing" ng-hide="!schools.school">
+                  <a class="btn btn-flat btn-default btn-sm" data-toggle="modal" data-target="#editEduModal"><i class="fa fa-pencil-square-o fa-lg edit-text-color"></i><span class="edit-text-color">Edit<span></a>
                 </div>
                 
-                <span class="batch-item-spacing col-md-12"/>
-              </div><!--End Institution Batch -->      
+              </div><!--End Institution Batch --> 
+
+              <!-- TOGGLE MODAL BUTTON -->
+              <a ng-hide="schools.school" id="button-color" class="col-xs-12 col-md-12 btn btn-default btn-raised btn-sm" data-toggle="modal" data-target="#addEduModal"><i class="fa fa-plus edit-text-color"></i><span class="edit-text-color"> Add<span></a>     
 
             </div><!-- End of Education panel-body -->
           </div><!-- End of Education panel-default -->
 
           <!-- SKILLS PANEL -->
           <div class="panel panel-default panel-outline-color">
-            <div class="form-inline panel-body">
-              <label for="skills">Skills:</label>
-              <input type="text" style="width: 90%;" class="form-control floating-label" id="form-input-underline" placeholder="{{skills}}"> 
+            <div class="panel-body">
+              <span><strong>Skills:</strong>{{skills}}</span>
+
+              <!-- EDIT BUTTON -->
+              <div class="col-xs-12 col-md-12 char-left-alignment" ng-hide="!skills">
+                <a class="btn btn-flat btn-default btn-sm" data-toggle="modal" data-target="#editSkillsModal"><i class="fa fa-pencil-square-o fa-lg edit-text-color"></i><span class="edit-text-color">Edit<span></a>
+              </div>
+
+              <!-- TOGGLE MODAL BUTTON -->
+              <a ng-hide="skills" id="button-color" class="col-xs-12 col-md-12 btn btn-default btn-raised btn-sm" data-toggle="modal" data-target="#addSkillsModal"><i class="fa fa-plus edit-text-color"></i><span class="edit-text-color"> Add<span></a>
+            
             </div>
           </div>
 
 
 
           <!-- WORK EXPERIENCE PANEL -->
-          <div class="panel panel-default panel-outline-color">
-            <div class="panel-heading">
+          <div class="panel spanel-default panel-outline-color">
+            <div class="panel-heading" id="panel-heading-color">
               <h3 class="panel-title">Work Experience</h3>
             </div>
             <!-- WORK PANEL BODY -->
@@ -155,77 +125,35 @@
               
               <!-- WORK BATCH -->
               <div ng-repeat="workHistory in workHistory">
-
-                <div class="col-md-12 char-left-alignment">
-                  <div class="input-group col-xs-12">
-                    <label for="employer_name" class="sr-only"></label>
-                    <input type="text" class="form-control floating-label panel-title" id="form-input-underline" placeholder="{{workHistory.employer_name}}">
-                  </div>
+                <div class="col-md-12 char-left-alignment input-underline">
+                  <span class="panel-sub-title">{{workHistory.employer_name}}</span>
                 </div>
-
-                <!-- WORK POSITON COLUMNS  NOTE:remove p's and add row-bottom.. in profile as well -->
-                <div class="col-xs-12 col-md-3 char-left-alignment row-bottom-spacing">
-                  <label for="position_title" class="sr-only"></label>
-                  <input type="text" class="form-control floating-label" id="form-input-underline" placeholder="{{workHistory.position_title}}">
+                <!-- WORK POSITON COLUMN -->
+                <div class="col-xs-12 col-md-6 char-left-alignment">  
+                  <p>
+                    <span>{{workHistory.position_title}} | {{workHistory.location_city}}, {{workHistory.location_state}}</span>
+                  </p>
                 </div>
-
-                <div class="col-xs-12 col-md-2 char-left-alignment row-bottom-spacing"> 
-                  <label for="location_city" class="sr-only"></label>
-                  <input type="text" class="form-control floating-label" id="form-input-underline" placeholder="{{workHistory.location_city}}">                  
-                </div>
-
-                <div class="col-xs-12 col-md-1 char-left-alignment row-bottom-spacing">
-                  <label for="location_state" class="sr-only"></label> 
-                  <input type="text" class="form-control floating-label" id="form-input-underline" placeholder="{{workHistory.location_state}}">                  
-                </div>
-
                 <!-- WORK YEARS COLUMN -->
-
-                <div class="col-xs-12 col-md-3 char-left-alignment row-bottom-spacing" nostyle="border: 2px dashed red;">
-                      <label for="employment_start_date" class="sr-only"></label> 
-                      <input type="date" class="form-control"
-                             datepicker-popup 
-                             ng-model="workHistory.employment_start_date"
-                             current-text="'workHistory.employment_start_date'" 
-                             is-open="opened" 
-                             min-date="minDate" 
-                             max-date="'2015-06-22'" 
-                             datepicker-options="dateOptions" 
-                             date-disabled="disabled(date, mode)" 
-                             ng-required="true" 
-                             close-text="Close"
-                             id="form-input-underline" 
-                             nostyle="border: 2px dashed green;" />
+                <div class="col-xs-12 col-md-6">
+                  <p class="char-right-alignment">
+                    <span>{{workHistory.employment_start_date}}  to  {{workHistory.employment_end_date}}</span>
+                  </p>
                 </div>
-
-<!--                 <div class="col-xs-12 col-md-1 char-left-alignment row-bottom-spacing">
-                  <span>to</span>
-                </div> -->
-
-                <div class="col-xs-12 col-md-3 char-right-alignment row-bottom-spacing" nostyle="border: 2px dashed red;">
-                      <label for="employment_end_date" class="sr-only"></label> 
-                      <input type="date" class="form-control"
-                             datepicker-popup 
-                             ng-model="workHistory.employment_end_date"
-                             current-text="workHistory.employment_end_date" 
-                             is-open="opened" 
-                             min-date="minDate" 
-                             max-date="'2015-06-22'" 
-                             datepicker-options="dateOptions" 
-                             date-disabled="disabled(date, mode)" 
-                             ng-required="true" 
-                             close-text="Close"
-                             id="form-input-underline" 
-                             nostyle="border: 2px dashed green;" />
-                </div>
-
                 <!-- POSITION SUMMARY -->
-                <div class="col-md12 batch-item-spacing">
-                  <label for="position_summary" classs="sr-only">Position Summary: <span style="color: gray;">(1000 characters max)</span></label> 
-                  <textarea type="text" class="form-control floting-label" ng-model="workHistory.position_summary" rows="3" maxlength="1000" id="form-input-underline">{{workHistory.position_summary}}</textarea>               
+                <div class="col-md12">
+                    <span>{{workHistory.position_summary}}</span>
+                </div>
+
+                <!-- EDIT BUTTON -->
+                <div class="col-xs-12 col-md-12 char-left-alignment batch-item-spacing" ng-hide="!workHistory.employer_name">
+                  <a class="btn btn-flat btn-default btn-sm" data-toggle="modal" data-target="#editWorkHistoryModal"><i class="fa fa-pencil-square-o fa-lg edit-text-color"></i><span class="edit-text-color">Edit<span></a>
                 </div>
 
               </div><!-- End of Work Batch -->
+
+              <!-- TOGGLE MODAL BUTTON -->
+              <a ng-hide="workHistory.employer_name" id="button-color" class="col-xs-12 col-md-12 btn btn-default btn-raised btn-sm" data-toggle="modal" data-target="#addWorkHistoryModal"><i class="fa fa-plus edit-text-color"></i><span class="edit-text-color"> Add<span></a>
 
             </div><!-- End of Work Panel Body -->
           </div><!-- End of Work Experience Panel -->
@@ -237,4 +165,12 @@
     </div><!-- end of ng-show -->
   </div>
 </div>
- 
+<div ng-include="'views/consultants/partials/editEducationTmpl.html'"></div>
+<div ng-include="'views/consultants/partials/editSkillsTmpl.html'"></div>
+<div ng-include="'views/consultants/partials/editSummaryTmpl.html'"></div>
+<div ng-include="'views/consultants/partials/editWorkHistoryTmpl.html'"></div>
+
+<div ng-include="'views/consultants/partials/addEducationTmpl.html'"></div>
+<div ng-include="'views/consultants/partials/addSkillsTmpl.html'"></div>
+<div ng-include="'views/consultants/partials/addSummaryTmpl.html'"></div>
+<div ng-include="'views/consultants/partials/addWorkHistoryTmpl.html'"></div>

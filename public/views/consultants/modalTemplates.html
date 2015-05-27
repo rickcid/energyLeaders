@@ -1,0 +1,300 @@
+
+<div class="center-content">
+  
+  <div class="col-xs-12 col-sm-10 col-md-8">
+    <!-- CONSULTANT DETAILS -->
+    <div no-ng-show="!listMode">
+      <h1 style="color: #3F51B5;">UPDATE PROFILE</h1>
+      <h2 class="titles-styling">{{consultant.first_name + ' ' + consultant.last_name}}</h2>
+      
+      <div class="row"><!-- TOP PANEL -->
+
+        <div class="col-xs-12 col-sm-12 col-md-6">  
+          <div classs="row">
+            <div class="thumbnail col-xs-4 col-sm-4 col-md-6">
+              <img class="img-circle" src="/images/profile_alternative.jpg" alt="/images/profile_alternative.jpg">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-md-6 profile-info-spacing">
+          <span>
+            <span class="profile-title-style">Location: </span> 
+            <span> {{consultant.location.city + ', ' + consultant.location.state + ', ' + consultant.location.country}}</span>
+          </span><br>
+          <span>
+            <strong>Member Since: </strong> 
+            <span> {{ consultant.date_created | amDateFormat: 'dddd, MMMM Do YYYY'}}</span>
+          </span><br>
+          <span>
+            <strong>Total Completed Projects: </strong>
+            <span> 3 Projects</span>
+          </span><br><br>
+          <span>
+            <strong>Recommended Rating: </strong>
+            <span> 9/10 <i class="fa fa-star fa-lg star-color"></i></span>
+          </span>
+        </div>
+
+      </div><!-- End of TOP PANEL/Row -->
+
+      <!-- CONSULTANT CONTENT PANEL -->
+      <div class="row">
+        <div class="col-md-12">
+
+
+
+          <div class="panel panel-default panel-spacing panel-outline-color">
+            <div class="panel-heading">
+              <h3 class="panel-title">Summary <span style="color: gray;">(220 characters max)</span></h3>  
+            </div>
+            <div class="panel-body">
+
+              <div class="input-group col-xs-12">
+                <label for="summary" class="sr-only">Summary:</label>
+                  <textarea type="text" class="form-control floting-label" ng-model="profile.summary" rows="3" maxlength="220" id="form-input-underline">{{profile.summary}}</textarea>
+              </div>
+
+            </div> 
+          </div>
+
+
+
+          <!-- EDUCATION PANEL -->
+          <div class="panel panel-default panel-outline-color">
+            <div class="panel-heading">
+              <h3 class="panel-title">Education</h3>  
+            </div>
+            <!-- EDUCATION PANEL BODY -->
+            <div class="panel-body">
+
+              <!-- INSTITUTION BATCH -->
+              <div ng-repeat="schools in schools"> 
+
+                <div class="col-md-12 char-left-alignment">
+                  <div class="input-group col-xs-12">
+                    <label for="school" class="sr-only"></label>
+                    <input type="text" class="form-control floating-label panel-title" id="form-input-underline" placeholder="{{schools.school}}">
+                  </div>
+                </div>
+
+
+                <!-- DEGREE COLUMN -->
+                <div class="col-xs-12 col-md-2 char-left-alignment">
+                  <div class="input-group col-xs-12" id="form-input-underline">
+
+                    <label for="degree" class="sr-only"></label>
+                    <select class="form-control" id="select" ng-model="schools.deg" >
+                      <option value="B.A.">B.A.</option>
+                      <option value="B.S.">B.S.</option>
+                      <option value="M.A.">M.A.</option>
+                      <option value="M.S.">M.S.</option>
+                      <option value="MBA">MBA</option>
+                      <option value="Phd">Phd</option>
+                    </select>                    
+
+                  </div> 
+                </div>
+
+                <div class="col-xs-12 col-md-7 char-left-alignment">
+                  <div class="input-group col-xs-12">
+                    <label for="major" class="sr-only"></label> 
+                    <input type="text" class="form-control floating-label" id="form-input-underline" placeholder="{{schools.maj}}">
+                  </div>
+                </div>
+
+
+
+                <!-- GRAD YEAR COLUMN -->
+
+                <div class="col-xs-12 col-md-3 char-right-alignment">
+                  <div class="input-group col-xs-12" id="form-input-underline">
+
+                    <label for="grad_year" class="sr-only"></label>
+                    <select class="form-control" id="select" ng-model="schools.year" >
+                      <option value="1970">1970</option>
+                      <option value="1971">1971</option>
+                      <option value="1972">1972</option>
+                      <option value="1973">1973</option>
+                      <option value="1974">1974</option>
+                      <option value="1975">1975</option>
+                      <option value="1976">1976</option>
+                      <option value="1977">1977</option>
+                      <option value="1978">1978</option>
+                      <option value="1979">1979</option>
+                      <option value="1980">1980</option>
+                      <option value="1981">1981</option>
+                      <option value="1982">1982</option>
+                      <option value="1983">1983</option>
+                      <option value="1984">1984</option>
+                      <option value="1985">1985</option>
+                      <option value="1986">1986</option>
+                      <option value="1987">1987</option>
+                      <option value="1988">1988</option>
+                      <option value="1989">1989</option>
+                      <option value="1990">1990</option>
+                      <option value="1991">1991</option>
+                      <option value="1992">1992</option>
+                      <option value="1993">1993</option>
+                      <option value="1994">1994</option>
+                      <option value="1995">1995</option>
+                      <option value="1996">1996</option>
+                      <option value="1997">1997</option>
+                      <option value="1998">1998</option>
+                      <option value="1999">1999</option>
+                      <option value="2000">2000</option>
+                      <option value="2001">2001</option>
+                      <option value="2002">2002</option>
+                      <option value="2003">2003</option>
+                      <option value="2004">2004</option>
+                      <option value="2005">2005</option>
+                      <option value="2006">2006</option>
+                      <option value="2007">2007</option>
+                      <option value="2008">2008</option>
+                      <option value="2009">2009</option>
+                      <option value="2010">2010</option>
+                      <option value="2011">2011</option>
+                      <option value="2012">2012</option>
+                      <option value="2013">2013</option>
+                      <option value="2014">2014</option>
+                      <option value="2015">2015</option>
+                      <option value="2016">2016</option>
+                      <option value="2017">2017</option>
+                      <option value="2018">2018</option>
+                      <option value="2019">2019</option>
+                      <option value="2020">2020</option>
+                      <option value="2021">2021</option>
+                      <option value="2022">2022</option>
+                      <option value="2023">2023</option>
+                      <option value="2024">2024</option>
+                      <option value="2025">2025</option>
+                    </select> 
+
+                  </div>
+                </div>
+                
+                <span NO-class="batch-item-spacing col-md-12"/>
+              </div><!--End Institution Batch --> 
+              
+              <!-- ADD EDUCATION SECTION TOGGLE -->
+              <div class="col-xs-12 col-md-12 char-left-alignment" style="border: 2px dashed red;">
+                <a NO-class="btn btn-default" No-style="border: 2px dashed red; color: blue;" ng-click="isCollapsed = !isCollapsed">Add Education</a>
+
+                <!-- INSTITUTION INPUT SECTION -->
+                <div collapse="isCollapsed">
+                  
+                  <div class="">
+                  Some content
+
+
+
+                  </div>
+
+                </div><!-- End of Institution Input section collapse -->
+              </div><!--      
+
+            </div><!-- End of Education panel-body -->
+          </div><!-- End of Education panel-default -->
+
+          <!-- SKILLS PANEL -->
+          <div class="panel panel-default panel-outline-color">
+            <div class="form-inline panel-body">
+              <label for="skills">Skills:</label>
+              <input type="text" style="width: 90%;" class="form-control floating-label" id="form-input-underline" placeholder="{{skills}}"> 
+            </div>
+          </div>
+
+
+
+          <!-- WORK EXPERIENCE PANEL -->
+          <div class="panel panel-default panel-outline-color">
+            <div class="panel-heading">
+              <h3 class="panel-title">Work Experience</h3>
+            </div>
+            <!-- WORK PANEL BODY -->
+            <div class="panel-body">
+              
+              <!-- WORK BATCH -->
+              <div ng-repeat="workHistory in workHistory">
+
+                <div class="col-md-12 char-left-alignment">
+                  <div class="input-group col-xs-12">
+                    <label for="employer_name" class="sr-only"></label>
+                    <input type="text" class="form-control floating-label panel-title" id="form-input-underline" placeholder="{{workHistory.employer_name}}">
+                  </div>
+                </div>
+
+                <!-- WORK POSITON COLUMNS  NOTE:remove p's and add row-bottom.. in profile as well -->
+                <div class="col-xs-12 col-md-3 char-left-alignment row-bottom-spacing">
+                  <label for="position_title" class="sr-only"></label>
+                  <input type="text" class="form-control floating-label" id="form-input-underline" placeholder="{{workHistory.position_title}}">
+                </div>
+
+                <div class="col-xs-12 col-md-2 char-left-alignment row-bottom-spacing"> 
+                  <label for="location_city" class="sr-only"></label>
+                  <input type="text" class="form-control floating-label" id="form-input-underline" placeholder="{{workHistory.location_city}}">                  
+                </div>
+
+                <div class="col-xs-12 col-md-1 char-left-alignment row-bottom-spacing">
+                  <label for="location_state" class="sr-only"></label> 
+                  <input type="text" class="form-control floating-label" id="form-input-underline" placeholder="{{workHistory.location_state}}">                  
+                </div>
+
+                <!-- WORK YEARS COLUMN -->
+<!-- 
+                <div class="col-xs-12 col-md-3 char-left-alignment row-bottom-spacing" nostyle="border: 2px dashed red;">
+                      <label for="employment_start_date" class="sr-only"></label> 
+                      <input type="date" class="form-control"
+                             datepicker-popup 
+                             ng-model="workHistory.employment_start_date"
+                             current-text="'workHistory.employment_start_date'" 
+                             is-open="opened" 
+                             min-date="minDate" 
+                             max-date="'2015-06-22'" 
+                             datepicker-options="dateOptions" 
+                             date-disabled="disabled(date, mode)" 
+                             ng-required="true" 
+                             close-text="Close"
+                             id="form-input-underline" 
+                             nostyle="border: 2px dashed green;" />
+                </div>
+
+                <div class="col-xs-12 col-md-1 char-left-alignment row-bottom-spacing">
+                  <span>to</span>
+                </div>
+
+                <div class="col-xs-12 col-md-3 char-right-alignment row-bottom-spacing" nostyle="border: 2px dashed red;">
+                      <label for="employment_end_date" class="sr-only"></label> 
+                      <input type="date" class="form-control"
+                             datepicker-popup 
+                             ng-model="workHistory.employment_end_date"
+                             current-text="workHistory.employment_end_date" 
+                             is-open="opened" 
+                             min-date="minDate" 
+                             max-date="'2015-06-22'" 
+                             datepicker-options="dateOptions" 
+                             date-disabled="disabled(date, mode)" 
+                             ng-required="true" 
+                             close-text="Close"
+                             id="form-input-underline" 
+                             nostyle="border: 2px dashed green;" />
+                </div>
+ -->
+                <!-- POSITION SUMMARY -->
+                <div class="col-md12 batch-item-spacing">
+                  <label for="position_summary" classs="sr-only">Position Summary: <span style="color: gray;">(1000 characters max)</span></label> 
+                  <textarea type="text" class="form-control floting-label" ng-model="workHistory.position_summary" rows="3" maxlength="1000" id="form-input-underline">{{workHistory.position_summary}}</textarea>               
+                </div>
+
+              </div><!-- End of Work Batch -->
+
+            </div><!-- End of Work Panel Body -->
+          </div><!-- End of Work Experience Panel -->
+
+        </div><!-- End of Content Panel col-sizing -->
+      </div><!-- End of Content Panel Row -->
+
+
+    </div><!-- end of ng-show -->
+  </div>
+</div>
