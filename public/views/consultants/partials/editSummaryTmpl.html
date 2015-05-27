@@ -1,4 +1,4 @@
-<div class="modal fade" id="editSummaryModal" tabindex="-1" rol="dialog" ng-controller="ConsultantCtrl">
+<div class="modal fade bs-example-modal-lg" id="editSummaryModal" tabindex="-1" role="dialog" ng-controller="ConsultantCtrl">
   <div class="modal-dialog">
     <div class="modal-content">
       
@@ -7,17 +7,19 @@
         <!-- PANEL HEADING -->
         <div class="panel-heading" id="modal-panel-heading-color">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <span class="modal-sub-title"><strong>Add Summary</strong></span>
+          <div class="modal-sub-title"><strong>Edit Summary</strong><span class="fade-modal-text"> (220 characters max)</span></div>
         </div>
         
         <!-- PANEL BODY -->
         <div class="panel-body">
-          <form NO-ng-submit="addSchool(schools)">              
-            <input type="text" ng-model="schools.school" class="form-control" placeholder="School Name" required><br>             
-            <input type="number" ng-model="schools.deg" class="form-control" placeholder="Degree" required><br>
-            <input type="submit" value="Update" class="btn btn-warning" id="button-color">
-          </form> 
-        </div>
+
+          <div class="input-group col-xs-12">
+            <label for="summary" class="sr-only">Summary:</label>
+              <textarea type="text" class="form-control floting-label" ng-model="profile.summary" rows="3" maxlength="220" id="form-input-underline">{{profile.summary}}</textarea>
+          </div>
+          <span class="modal-batch-item-spacing col-md-12"/>
+          <input type="submit" value="Update" class="btn btn-warning" id="button-color">
+        </div> 
 
       </div>
 

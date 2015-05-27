@@ -7,14 +7,88 @@
         <!-- PANEL HEADING -->
         <div class="panel-heading" id="modal-panel-heading-color">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <span class="modal-sub-title"><strong>Add Employer</strong></span>
+          <span class="modal-sub-title"><strong>Edit Employer</strong></span>
         </div>
         
         <!-- PANEL BODY -->
         <div class="panel-body">
-          <form NO-ng-submit="addSchool(schools)">              
-            <input type="text" ng-model="schools.school" class="form-control" placeholder="School Name" required><br>             
-            <input type="number" ng-model="schools.deg" class="form-control" placeholder="Degree" required><br>
+          <form NO-ng-submit="addSomething(empl)">
+            <div ng-repeat="workHistory in workHistory">
+
+            <div class="col-md-12 char-left-alignment">
+              <div class="input-group col-xs-12">
+                <label for="employer_name" class="sr-only"></label>
+                <input type="text" class="form-control floating-label panel-title" id="form-input-underline" placeholder="{{workHistory.employer_name}}">
+              </div>
+            </div>
+
+            <!-- WORK POSITON COLUMNS  NOTE:remove p's and add row-bottom.. in profile as well -->
+            <div class="col-xs-12 col-md-3 char-left-alignment row-bottom-spacing">
+              <label for="position_title" class="sr-only"></label>
+              <input type="text" class="form-control floating-label" id="form-input-underline" placeholder="{{workHistory.position_title}}">
+            </div>
+
+            <div class="col-xs-12 col-md-2 char-left-alignment row-bottom-spacing"> 
+              <label for="location_city" class="sr-only"></label>
+              <input type="text" class="form-control floating-label" id="form-input-underline" placeholder="{{workHistory.location_city}}">                  
+            </div>
+
+            <div class="col-xs-12 col-md-1 char-left-alignment row-bottom-spacing">
+              <label for="location_state" class="sr-only"></label> 
+              <input type="text" class="form-control floating-label" id="form-input-underline" placeholder="{{workHistory.location_state}}">                  
+            </div>
+
+            <!-- WORK YEARS COLUMN -->
+
+                <div class="col-xs-12 col-md-3 char-left-alignment row-bottom-spacing" nostyle="border: 2px dashed red;">
+                      <label for="employment_start_date" class="sr-only"></label> 
+                      <input type="date" class="form-control"
+                             datepicker-popup 
+                             ng-model="workHistory.employment_start_date"
+                             current-text="'workHistory.employment_start_date'" 
+                             is-open="opened" 
+                             min-date="minDate" 
+                             max-date="'2015-06-22'" 
+                             datepicker-options="dateOptions" 
+                             date-disabled="disabled(date, mode)" 
+                             ng-required="true" 
+                             close-text="Close"
+                             id="form-input-underline" 
+                             nostyle="border: 2px dashed green;" />
+                </div>
+
+                <div class="col-xs-12 col-md-1 char-left-alignment row-bottom-spacing">
+                  <span>to</span>
+                </div>
+
+                <div class="col-xs-12 col-md-3 char-right-alignment row-bottom-spacing" nostyle="border: 2px dashed red;">
+                
+                      <label for="employment_end_date" class="sr-only"></label> 
+                      <input type="date" class="form-control"
+                             datepicker-popup 
+                             ng-model="workHistory.employment_end_date"
+                             current-text="workHistory.employment_end_date" 
+                             is-open="opened" 
+                             min-date="minDate" 
+                             max-date="'2015-06-22'" 
+                             datepicker-options="dateOptions" 
+                             date-disabled="disabled(date, mode)" 
+                             ng-required="true" 
+                             close-text="Close"
+                             id="form-input-underline" 
+                             nostyle="border: 2px dashed green;" />
+                </div>
+
+                <!-- POSITION SUMMARY -->
+                <div class="col-md12 batch-item-spacing">
+                  <label for="position_summary" classs="sr-only">Position Summary: <span style="color: gray;">(1000 characters max)</span></label> 
+                  <textarea type="text" class="form-control floting-label" ng-model="workHistory.position_summary" rows="3" maxlength="1000" id="form-input-underline">{{workHistory.position_summary}}</textarea>               
+                </div>
+              
+              </div><!-- End of Work Batch -->
+              
+            <span class="modal-batch-item-spacing col-md-12"/>
+
             <input type="submit" value="Update" class="btn btn-warning" id="button-color">
           </form> 
         </div>

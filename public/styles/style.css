@@ -222,6 +222,15 @@ a, a:hover, a:focus {
   color: #3F51B5;
 }
 
+.button-margin {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.panel-heading-bottom-spacing {
+  margin-bottom: 12px;
+}
+
 /*** MODALS ***/
 #modal-panel-heading-color {
   background-color: #C5CAE9;
@@ -230,6 +239,14 @@ a, a:hover, a:focus {
 .modal-sub-title {
   font-size: 16px;
   color: #3F51B5;
+}
+
+.fade-modal-text {
+  color: gray;
+}
+
+.modal-batch-item-spacing {
+  margin-bottom: 15px;
 }
 
 /** UPDATE CONSULTANT CONTACT INFO VIEW **/
@@ -244,4 +261,11 @@ a, a:hover, a:focus {
 }
 
 
+.panel-bottom-spacing {
+  margin-bottom: 12px;
+}
+
+.panel-title-center {
+  margin-top: 4px;
+}
 

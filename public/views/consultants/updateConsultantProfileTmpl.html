@@ -42,56 +42,56 @@
         <div class="col-md-12">
 
           <div class="panel panel-default panel-spacing panel-outline-color">
-            <div class="panel-heading" id="panel-heading-color">
-              <h3 class="panel-title">Summary</h3>  
+            <div class="col-xs-12 col-md-12 panel-heading panel-heading-bottom-spacing" id="panel-heading-color">
+              <h3 class="col-xs-6 col-md-6 panel-title char-left-alignment panel-title-center">Summary</h3> 
+
+              <!-- EDIT - MODAL BUTTON -->
+              <span ng-hide="!profile.summary"class="col-xs-6 col-md-6 char-right-alignment">
+                <a class="btn btn-warning btn-sm button-margin" id="button-color" data-toggle="modal" data-target="#editSummaryModal"><i class="fa fa-pencil-square-o fa-lg"></i> Edit</a>
+              </span>
             </div>
+
             <div class="panel-body">
               {{profile.summary}}
 
-              <!-- EDIT BUTTON -->
-              <div ng-hide="!profile.summary" class="col-xs-12 col-md-12 char-left-alignment">
-                <a class="btn btn-flat btn-default btn-sm" data-toggle="modal" data-target="#editSummaryModal"><i class="fa fa-pencil-square-o fa-lg edit-text-color"></i><span class="edit-text-color">Edit<span></a>
-              </div>
-
-              <!-- TOGGLE MODAL BUTTON -->
-              <a NO-ng-hide="profile.summary" id="button-color" class="col-xs-12 col-md-12 btn btn-default btn-raised btn-sm" data-toggle="modal" data-target="#addSummaryModal"><i class="fa fa-plus edit-text-color"></i><span class="edit-text-color"> Add<span></a>     
+              <!-- ADD - MODAL BUTTON -->
+              <a ng-hide="profile.summary" id="button-color" class="col-xs-12 col-md-12 btn btn-default btn-raised btn-sm" data-toggle="modal" data-target="#addSummaryModal"><i class="fa fa-plus edit-text-color"></i><span class="edit-text-color"> Add<span></a>     
 
             </div> 
           </div>
 
           <!-- EDUCATION PANEL -->
           <div class="panel panel-default panel-outline-color">
-            <div class="panel-heading" id="panel-heading-color">
-              <h3 class="panel-title">Education</h3>  
+            <div class="col-xs-12 col-md-12 panel-heading panel-heading-bottom-spacing" id="panel-heading-color">
+              <h3 class="col-xs-6 col-md-6 panel-title char-left-alignment panel-title-center">Education</h3>
+              
+              <!-- EDIT - MODAL BUTTON -->
+              <span class="col-xs-6 col-md-6 char-right-alignment">
+                <a class="btn btn-warning btn-sm button-margin" id="button-color" data-toggle="modal" data-target="#editWorkHistoryModal"><i class="fa fa-pencil-square-o fa-lg"></i> Edit</a>
+              </span>
             </div>
+
             <!-- EDUCATION PANEL BODY -->
             <div class="panel-body">
 
               <!-- INSTITUTION BATCH -->
               <div ng-repeat="schools in schools">
-
                 <div class="col-md-12 char-left-alignment input-underline">
                   <span class="panel-sub-title">{{schools.school}}</span>
                 </div>
-
                 <!-- DEGREE COLUMN -->
                 <div class="col-xs-6 col-md-6 char-left-alignment">  
                     <span ng-hide="!schools.deg">{{schools.deg + ', ' + schools.maj}}</span>
                 </div>
-
                 <!-- GRAD YEAR COLUMN -->
                 <div class="col-xs-6 col-md-6 char-right-alignment">
                     <span ng-hide="!schools.year">Graduated: {{schools.year}}</span>
                 </div>
-
-                <!-- EDIT BUTTON -->
-                <div class="col-xs-12 col-md-12 char-left-alignment batch-item-spacing" ng-hide="!schools.school">
-                  <a class="btn btn-flat btn-default btn-sm" data-toggle="modal" data-target="#editEduModal"><i class="fa fa-pencil-square-o fa-lg edit-text-color"></i><span class="edit-text-color">Edit<span></a>
-                </div>
+                <span class="col-xs-12 col-md-12 batch-item-spacing"></span>
                 
               </div><!--End Institution Batch --> 
 
-              <!-- TOGGLE MODAL BUTTON -->
+              <!-- ADD - MODAL BUTTON -->
               <a ng-hide="schools.school" id="button-color" class="col-xs-12 col-md-12 btn btn-default btn-raised btn-sm" data-toggle="modal" data-target="#addEduModal"><i class="fa fa-plus edit-text-color"></i><span class="edit-text-color"> Add<span></a>     
 
             </div><!-- End of Education panel-body -->
@@ -100,14 +100,14 @@
           <!-- SKILLS PANEL -->
           <div class="panel panel-default panel-outline-color">
             <div class="panel-body">
-              <span><strong>Skills:</strong>{{skills}}</span>
+              <span class="col-xs-6 col-md-6 char-left-alignment"><strong>Skills:</strong>{{skills}} >>replace w/ select boxes</span>
+              
+              <!-- EDIT - MODAL BUTTON -->
+              <span ng-hide="!skills" class="col-xs-6 col-md-6 char-right-alignment">
+                <a class="btn btn-warning btn-sm button-margin" id="button-color" data-toggle="modal" data-target="#editSkillsModal"><i class="fa fa-pencil-square-o fa-lg"></i> Edit</a>
+              </span>
 
-              <!-- EDIT BUTTON -->
-              <div class="col-xs-12 col-md-12 char-left-alignment" ng-hide="!skills">
-                <a class="btn btn-flat btn-default btn-sm" data-toggle="modal" data-target="#editSkillsModal"><i class="fa fa-pencil-square-o fa-lg edit-text-color"></i><span class="edit-text-color">Edit<span></a>
-              </div>
-
-              <!-- TOGGLE MODAL BUTTON -->
+              <!-- ADD - TOGGLE MODAL BUTTON -->
               <a ng-hide="skills" id="button-color" class="col-xs-12 col-md-12 btn btn-default btn-raised btn-sm" data-toggle="modal" data-target="#addSkillsModal"><i class="fa fa-plus edit-text-color"></i><span class="edit-text-color"> Add<span></a>
             
             </div>
@@ -117,9 +117,15 @@
 
           <!-- WORK EXPERIENCE PANEL -->
           <div class="panel spanel-default panel-outline-color">
-            <div class="panel-heading" id="panel-heading-color">
-              <h3 class="panel-title">Work Experience</h3>
+            <div class="col-xs-12 col-md-12 panel-heading panel-heading-bottom-spacing" id="panel-heading-color">
+              <h3 class="col-xs-6 col-md-6 panel-title char-left-alignment panel-title-center">Work Experience</h3>
+
+              <!-- EDIT - MODAL BUTTON -->
+              <span class="col-xs-6 col-md-6 char-right-alignment">
+                <a class="btn btn-warning btn-sm button-margin" id="button-color" data-toggle="modal" data-target="#editWorkHistoryModal"><i class="fa fa-pencil-square-o fa-lg"></i> Edit</a>
+              </span>
             </div>
+
             <!-- WORK PANEL BODY -->
             <div class="panel-body">
               
@@ -144,16 +150,30 @@
                 <div class="col-md12">
                     <span>{{workHistory.position_summary}}</span>
                 </div>
-
-                <!-- EDIT BUTTON -->
-                <div class="col-xs-12 col-md-12 char-left-alignment batch-item-spacing" ng-hide="!workHistory.employer_name">
-                  <a class="btn btn-flat btn-default btn-sm" data-toggle="modal" data-target="#editWorkHistoryModal"><i class="fa fa-pencil-square-o fa-lg edit-text-color"></i><span class="edit-text-color">Edit<span></a>
-                </div>
+                <span class="col-xs-12 col-md-12 batch-item-spacing"></span>
 
               </div><!-- End of Work Batch -->
 
               <!-- TOGGLE MODAL BUTTON -->
               <a ng-hide="workHistory.employer_name" id="button-color" class="col-xs-12 col-md-12 btn btn-default btn-raised btn-sm" data-toggle="modal" data-target="#addWorkHistoryModal"><i class="fa fa-plus edit-text-color"></i><span class="edit-text-color"> Add<span></a>
+
+               <div class="col-xs-12 col-md-3 char-right-alignment row-bottom-spacing" nostyle="border: 2px dashed red;">
+                
+                      <label for="employment_end_date" class="sr-only"></label> 
+                      <input type="date" class="form-control"
+                             datepicker-popup 
+                             ng-model="workHistory.employment_end_date"
+                             current-text="workHistory.employment_end_date" 
+                             is-open="opened" 
+                             min-date="minDate" 
+                             max-date="'2015-06-22'" 
+                             datepicker-options="dateOptions" 
+                             date-disabled="disabled(date, mode)" 
+                             ng-required="true" 
+                             close-text="Close"
+                             id="form-input-underline" 
+                             nostyle="border: 2px dashed green;" />
+                </div>
 
             </div><!-- End of Work Panel Body -->
           </div><!-- End of Work Experience Panel -->
