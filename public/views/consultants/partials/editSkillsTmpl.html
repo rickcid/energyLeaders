@@ -7,16 +7,17 @@
         <!-- PANEL HEADING -->
         <div class="panel-heading" id="modal-panel-heading-color">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <span class="modal-sub-title"><strong>Add Skills</strong></span>
+          <span class="modal-sub-title"><strong>Edit Skills</strong></span>
         </div>
         
         <!-- PANEL BODY -->
         <div class="panel-body">
-          <form NO-ng-submit="addSchool(schools)">              
-            <input type="text" ng-model="schools.school" class="form-control" placeholder="School Name" required><br>             
-            <input type="number" ng-model="schools.deg" class="form-control" placeholder="Degree" required><br>
+          <form NO-ng-submit="addthis()" class="form-inline panel-body">
+            <label for="skills">Skills:</label>
+            <input type="text" style="width: 90%;" class="form-control floating-label" id="form-input-underline" placeholder="{{skills}}">
+            <span class="modal-batch-item-spacing col-md-12"/>
             <input type="submit" value="Update" class="btn btn-warning" id="button-color">
-          </form> 
+          </form>
         </div>
 
       </div>
