@@ -1,6 +1,14 @@
 var app = angular.module('energyLeaders');
 
-app.controller('BrowseProjectsCtrl', function($scope, $routeParams, UserService) {
+app.controller('BrowseProjectsCtrl', function($scope, $routeParams, UserService, currentAuth) {
+
+  console.log(currentAuth);
+
+  if(currentAuth.isCompany) {
+    $scope.isCompany === true;
+  }if (currentAuth.isConsultant) {
+    $scope.isConsultant === true;
+  }
 
   var allProjectsData = UserService.projectData;
   // console.log('All Projects Data:', $scope.projects);

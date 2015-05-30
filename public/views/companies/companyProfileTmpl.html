@@ -1,6 +1,73 @@
-<div ng-controller="CompanyCtrl">
+<!-- <div ng-controller="CompanyCtrl">
 
 <p>{{company.company_name}}</p>
 <p>{{company.location.city}}</p>
 
-</div><!-- CompanyCtrl ng-controller -->
+</div> -->
+
+<span class="center-content">
+  
+
+  <form ng-submit="updateContactInfo(user)" class="col-xs-12 col-md-8">
+    <h3 class="title">Company Profile Information</h3><br>
+    <div class="container panel panel-default col-sm-12 .col-md-12" styles="border: 2px dashed red;">
+
+      <div class="panel-body">
+        <span><i class="fa fa-user fa-2x"> </i> Profile Information</span><br><br>
+        <div class="input-group col-xs-12">
+          <label for="representative-first-name" class="sr-only"></label>
+          <input type="text" class="form-control floating-label" id="form-input-underline" ng-model="user.first_name" placeholder="First Name: {{user.first_name}}" required>
+        </div><br>
+
+        <div class="input-group col-xs-12">
+          <label for="representative-last-name" class="sr-only"></label>
+          <input type="text" class="form-control floating-label" id="form-input-underline" ng-model="user.last_name" placeholder="Last Name: {{user.last_name}}" required>
+        </div><br>
+
+        <div class="input-group col-xs-12">
+          <label for="phone_number" class="sr-only"></label>        
+          <input type="tel" class="form-control floating-label" id="form-input-underline" ng-model="user.phone_number" placeholder="Phone: {{user.phone_number}}" required>
+        </div><br>
+
+        <div class="col-xs-12 update-cons-elements">
+          <span>Email:</span>   
+          <span>{{user.email}}</span>
+        </div><br>
+      </div>
+
+
+      <div class="panel-body">
+        <div class="input-group col-xs-12">
+          <label for="city" class="sr-only"></label>
+          <input type="text" class="form-control floating-label" id="form-input-underline" ng-model="user.city" placeholder="City: {{consultant.city}}" required>
+        </div><br>
+
+        <div class="input-group col-xs-12">
+          <label for="state" class="sr-only"></label>        
+          <input type="text" class="form-control floating-label" id="form-input-underline" ng-model="user.state" placeholder="State: {{consultant.state}}" required>
+        </div><br>
+
+        <div class="input-group col-xs-12">
+          <label for="zip_code" class="sr-only"></label>        
+          <input type="text" class="form-control floating-label" id="form-input-underline" ng-model="user.zip_code" placeholder="Zip Code: {{consultant.zip_code}}">
+        </div><br>
+
+        <div class="input-group col-xs-12">
+          <label for="country" class="sr-only"></label>        
+          <input type="text" class="form-control floating-label" id="form-input-underline" ng-model="user.country" placeholder="Country: {{consultant.country}}" required>
+        </div><br>
+      </div>
+
+    <div class="center-content">
+      <input type="submit" value="Update" class="btn btn-danger">
+    </div><br><!-- End of Container -->
+  </form>
+
+</span>
+
+<script>
+  $(document).ready(function() {
+    // This command is used to initialize some elements and make them work properly
+    $.material.init();
+  });
+</script>

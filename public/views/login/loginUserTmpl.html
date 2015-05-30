@@ -1,0 +1,36 @@
+
+<span class="center-content">
+
+  <form ng-submit="loginUser(user)" class="col-xs-12 col-md-8">
+    <h3 class="title">Login</h3><br>
+    <div class="container panel panel-default col-sm-12 .col-md-12">
+      
+      <div class="panel-body registration-panel-top-spacing">
+        <div class="input-group">
+          <div class="input-group-addon">
+            <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+          </div>
+          <input type="email" ng-model="user.email" placeholder="Email" class="form-control" id="form-input-underline" required>
+        </div><br>
+
+        <div class="input-group">
+          <div class="input-group-addon">
+            <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
+          </div>
+          <input type="password" ng-model="user.password" placeholder="Password" class="form-control" id="form-input-underline" required>
+        </div><br> 
+      </div>
+
+    <div class="center-content">  
+      <input type="submit" value="Login" class="btn btn-info">
+    </div><br><!-- End of Container -->
+  </form>
+
+</span>
+
+<script>
+  $(document).ready(function() {
+    // This command is used to initialize some elements and make them work properly
+    $.material.init();
+  });
+</script>

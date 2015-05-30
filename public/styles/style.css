@@ -1,8 +1,8 @@
 /*
  * {
   border: 1px dashed blue;
-}
-*/
+}*/
+
 
 /*** GLOBAL STYLES ***/
 
@@ -60,8 +60,8 @@ a, a:hover, a:focus {
   font-weight: 500;
 }
 
-.nav-spacing {
-  padding-top: 80px;
+.top-spacing {
+  padding-top: 25px;
 }
 
 .navbar.navbar {
@@ -106,8 +106,46 @@ a, a:hover, a:focus {
 }
 
 .spacing-between-buttons {
-  padding: 8px;
+  padding: 20px;
 }
+
+.circle-icon {
+  padding: 4px 44px;
+  display: inline-block;
+  -moz-border-radius: 100px;
+  -webkit-border-radius: 100px;
+  border-radius: 100px;
+  -moz-box-shadow: 0px 0px 8px white;
+  -webkit-box-shadow: 0px 0px 8px white;
+  box-shadow: 0px 0px 8px white;
+  border: solid white;
+}
+
+.circle2-icon {
+  padding:10px 10px;
+  display: inline-block;
+  -moz-border-radius: 100px;
+  -webkit-border-radius: 100px;
+  border-radius: 100px;
+  -moz-box-shadow: 0px 0px 8px white;
+  -webkit-box-shadow: 0px 0px 8px white;
+  box-shadow: 0px 0px 8px white;
+  border: solid white;
+
+}
+
+.circle-spacing {
+  margin: 30px;
+  font-size: 40px;
+/*  padding-left: 20px*/
+
+}
+
+.number-spacing {
+  
+}
+
+
 
 /*** BROWSE/PROJECTS SCROLLING LIST ***/
 /* Content Box */
