@@ -2,25 +2,25 @@
 <span class="center-content">
   
 
-  <form class="col-xs-12 col-md-8">
-    <h3 class="title">Contact Information</h3><br>
+  <form ng-submit="updateContactInfo(user)" class="col-xs-12 col-md-8">
+    <h3 class="title">Consultant Contact Information</h3><br>
     <div class="container panel panel-default col-sm-12 .col-md-12" styles="border: 2px dashed red;">
 
       <div class="panel-body">
         <span><i class="fa fa-user fa-2x"> </i> Profile Information</span><br><br>
         <div class="input-group col-xs-12">
           <label for="representative-first-name" class="sr-only"></label>
-          <input type="text" class="form-control floating-label" id="input-underline" placeholder="First Name: {{consultant.first_name}}" required>
+          <input type="text" class="form-control floating-label" id="form-input-underline" ng-model="user.first_name" placeholder="First Name: {{user.first_name}}" required>
         </div><br>
 
         <div class="input-group col-xs-12">
           <label for="representative-last-name" class="sr-only"></label>
-          <input type="text" class="form-control floating-label" id="input-underline" placeholder="Last Name: {{consultant.last_name}}" required>
+          <input type="text" class="form-control floating-label" id="form-input-underline" ng-model="user.last_name" placeholder="Last Name: {{user.last_name}}" required>
         </div><br>
 
         <div class="input-group col-xs-12">
           <label for="phone_number" class="sr-only"></label>        
-          <input type="tel" class="form-control floating-label" id="input-underline" placeholder="Phone: {{consultant.phone_number}}" required>
+          <input type="tel" class="form-control floating-label" id="form-input-underline" ng-model="user.phone_number" placeholder="Phone: {{user.phone_number}}" required>
         </div><br>
 
         <div class="col-xs-12 update-cons-elements">
@@ -33,22 +33,22 @@
       <div class="panel-body">
         <div class="input-group col-xs-12">
           <label for="city" class="sr-only"></label>
-          <input type="text" class="form-control floating-label" id="input-underline" placeholder="City: {{consultant.location.city}}" required>
+          <input type="text" class="form-control floating-label" id="form-input-underline" ng-model="user.city" placeholder="City: {{consultant.city}}" required>
         </div><br>
 
         <div class="input-group col-xs-12">
           <label for="state" class="sr-only"></label>        
-          <input type="text" class="form-control floating-label" id="input-underline" placeholder="State: {{consultant.location.state}}" required>
+          <input type="text" class="form-control floating-label" id="form-input-underline" ng-model="user.state" placeholder="State: {{consultant.state}}" required>
         </div><br>
 
         <div class="input-group col-xs-12">
           <label for="zip_code" class="sr-only"></label>        
-          <input type="text" class="form-control floating-label" id="input-underline" placeholder="Zip Code: {{consultant.location.zip_code}}">
+          <input type="text" class="form-control floating-label" id="form-input-underline" ng-model="user.zip_code" placeholder="Zip Code: {{consultant.zip_code}}">
         </div><br>
 
         <div class="input-group col-xs-12">
           <label for="country" class="sr-only"></label>        
-          <input type="text" class="form-control floating-label" id="input-underline" placeholder="Country: {{consultant.location.country}}" required>
+          <input type="text" class="form-control floating-label" id="form-input-underline" ng-model="user.country" placeholder="Country: {{consultant.country}}" required>
         </div><br>
       </div>
 

@@ -7,35 +7,53 @@ app.config(function($routeProvider){
     })
     .when('/register/company', {
       templateUrl: 'views/register/registerCompanyTmpl.html',
-      controller: 'AuthCtrl'
+      controller: 'RegisterCtrl'
     })
     .when('/register/consultant', {
       templateUrl: 'views/register/registerConsultantTmpl.html',
-      controller: 'AuthCtrl'
+      controller: 'RegisterCtrl'
+    })
+    .when('/login', {
+      templateUrl: 'views/login/loginUserTmpl.html',
+      controller: 'LoginCtrl'
     })
     .when('/companies/create-profile', {
       templateUrl: 'views/companies/createCompanyProfileTmpl.html',
       controller: 'CompanyCtrl'
     })    
-    .when('/companies/:companyId', {
+    .when('/companies/:companyId/profile', {
       templateUrl: 'views/companies/companyProfileTmpl.html',
       controller: 'CompanyCtrl'
     })
     .when('/projects', {
       templateUrl: 'views/browseProjectsTmpl.html',
-      controller: 'BrowseProjectsCtrl'
+      controller: 'BrowseProjectsCtrl',
+      resolve: {
+        currentAuth: function(AuthService) {
+          return AuthService.requireAuth();
+        }
+      }
     })
     .when('/projects/:projectId', {
       templateUrl: 'views/browseProjectsTmpl.html',
-      controller: 'BrowseProjectsCtrl'
+      controller: 'BrowseProjectsCtrl',
+      resolve: {
+        currentAuth: function(AuthService) {
+          return AuthService.requireAuth();
+        }
+      }
     })
     //Needs to be assigned Authed id, currently hardcoded
     .when('/consultants/:userId', {
       templateUrl: 'views/consultants/consultantProfileTmpl.html',
       controller: 'ConsultantCtrl'
     })
-    .when('/consultants/:userId/contact-info/edit', {
+    .when('/consultants/:userId/contact-info', {
       templateUrl: 'views/consultants/consultantContactInfoTmpl.html',
+      controller: 'ConsultantCtrl'
+    })
+    .when('/consultants/:userId/contact-info/edit', {
+      templateUrl: 'views/consultants/updateConsultantContactInfoTmpl.html',
       controller: 'ConsultantCtrl'
     })    
     .when('/consultants/:userId/profile/edit', {

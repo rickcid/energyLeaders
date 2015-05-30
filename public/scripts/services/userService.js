@@ -3,12 +3,20 @@ var app = angular.module('energyLeaders');
 
 app.service('UserService', function($http, $q) {
 
-  this.registerConsultant = function(consultant) {
+  this.updateContactInfo = function(user) {
     var deferred = $q.defer();
     $http({
       method: 'POST',
-      url: '/api/register/consultant',
-      data: consultant
+      url: '/api/update/user-info/:userId',
+      data: {
+        first_name: user.first_name,
+        last_name: user.last_name,
+        phone_number: user.phone_number,
+        city: user.city,
+        state: user.state,
+        zip_code: user.zip_code,
+        country: user.country
+      }
     }).then(function(response) {
       deferred.resolve(response.data);
     });
@@ -17,6 +25,7 @@ app.service('UserService', function($http, $q) {
 
 
 
+//** SEEDED DATA AND FUNCTIONS **/
 
   this.displayAll = function(obj) {
     var allItems = '';

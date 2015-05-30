@@ -1,6 +1,20 @@
 var app = angular.module('energyLeaders');
 
-app.controller('ConsultantCtrl', function($scope, $routeParams, UserService) {
+app.controller('ConsultantCtrl', function($scope, $routeParams, $location, toaster, UserService) {
+
+  $scope.updateContactInfo = function(user) {
+    UserService.updateContactInfo(user).then(function() {
+      toaster.pop('success', 'You have successfully updated your information.')
+      $location.path('/consultants/:userId/contact-info');
+    }, function(err) {
+      console.log('updateContactInfo', err)
+      toaster.pop('error', 'Sorry, something went wrong!');
+    });
+  };
+
+
+
+/*** SEEDED DATA METHODS AND VARIABLES **/
 
   var allConsultants = UserService.consultantData;
   var consultantData = UserService.consultantData[$routeParams.userId]
