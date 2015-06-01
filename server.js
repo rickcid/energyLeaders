@@ -1,4 +1,4 @@
-// Dependencies
+//*** DEPENDENCIES ***//
 var mongoose = require('mongoose');
 var express = require('express');
 var bodyParser = require('body-parser');
@@ -6,17 +6,17 @@ var passport = require('passport');
 var session = require('express-session');
 var LocalStrategy = require('passport-local').Strategy;
 
-// Controllers
+//*** CONTROLLERS ***//
 var UserCtrl = require('./controllers/UserCtrl.js');
 
-// Models 
+//*** MODELS ***//
 var User = require('./models/User.js')
 
 
-// Express
+//*** EXPRESS ***//
 var app = express();
 
-// Middleware
+//*** MIDDLEWARE ***//
 app.use(session({
   secret: 'energyleaders are awesome consultants',
   saveUninitialized: true,
@@ -59,15 +59,31 @@ passport.deserializeUser(function(id, done) {
 });
 
 
-// Endpoints
+// var requireAuth = function(req, res, next) {
+//   if (!req.isAuthenticted()) {
+//     return res.status(401).end();
+//   }
+//   next();
+// };
 
-//someFuncthatVerifies
+// if we stored "is_admin" on the user model, we could also limit access to endpoints for admin only
+// var requireAdmin = function(req, res, next) {
+//  if (!req.user.is_admin) {
+//    return res.status(401).end();
+//  }
+//  next();
+// }
+
+
+
+//*** ENDPOINTS ****//
 
 //** User **//
 app.post('/api/register/user', UserCtrl.createUser);
 app.post('/api/login/user', passport.authenticate('local', { failureRedirect: '/browse'}), UserCtrl.loginUser);
-app.post('/api/update/user-info/:userId', UserCtrl.updateUser);
 app.get('/api/user/isLoggedIn', UserCtrl.isLoggedIn);
+app.post('/api/update/user-info/:userId', UserCtrl.updateUser);
+
 
 
 

@@ -15,14 +15,7 @@ module.exports = {
   },
 
   loginUser: function(req, res) {
-    return res.json({message: "you logged in"});
-  },
-
-  updateUser: function(req, res) {
-    Consultant.findByIdAndUpdate(req.params.id, req.body, function(err, result) {
-      if (err) return res.status(500).json(err);
-      res.json(result);
-    });
+    return res.json({loggedIn:true});
   },
 
   isLoggedIn: function(req, res) {
@@ -35,7 +28,15 @@ module.exports = {
         return res.status(200).json({isConsultant: true});
       }
     }
+  },
+
+  updateUser: function(req, res) {
+    Consultant.findByIdAndUpdate(req.params.id, req.body, function(err, result) {
+      if (err) return res.status(500).json(err);
+      res.json(result);
+    });
   }
+
   // //Used 'json' as oppossed to 'send' because it was not sending the object back
   // readConsultant: function(req, res) {
   //   console.log('req.query: ', req.query);

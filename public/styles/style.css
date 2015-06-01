@@ -189,7 +189,10 @@ a, a:hover, a:focus {
   background-color: #f1f1f1;
 }
 
-
+/* Remove? */
+#panel-title-color {
+  color: black;
+}
 
 /*** REGISTER CONSULTANT & COMPANY VIEWS ***/
 
