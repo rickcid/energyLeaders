@@ -7,11 +7,21 @@ app.config(function($routeProvider){
     })
     .when('/register/company', {
       templateUrl: 'views/register/registerCompanyTmpl.html',
-      controller: 'RegisterCtrl'
+      controller: 'RegisterCtrl',
+      resolve: {
+        currentAuth: function(AuthService) {
+          return AuthService.requireAuth();
+        }
+      }
     })
     .when('/register/consultant', {
       templateUrl: 'views/register/registerConsultantTmpl.html',
-      controller: 'RegisterCtrl'
+      controller: 'RegisterCtrl',
+      resolve: {
+        currentAuth: function(AuthService) {
+          return AuthService.requireAuth();
+        }
+      }
     })
     .when('/login', {
       templateUrl: 'views/login/loginUserTmpl.html',
@@ -23,7 +33,12 @@ app.config(function($routeProvider){
     })    
     .when('/companies/:companyId/profile', {
       templateUrl: 'views/companies/companyProfileTmpl.html',
-      controller: 'CompanyCtrl'
+      controller: 'CompanyCtrl',
+      resolve: {
+        currentAuth: function(AuthService) {
+          return AuthService.requireAuth();
+        }
+      }
     })
     .when('/projects', {
       templateUrl: 'views/browseProjectsTmpl.html',
@@ -46,19 +61,39 @@ app.config(function($routeProvider){
     //Needs to be assigned Authed id, currently hardcoded
     .when('/consultants/:userId', {
       templateUrl: 'views/consultants/consultantProfileTmpl.html',
-      controller: 'ConsultantCtrl'
+      controller: 'ConsultantCtrl',
+      resolve: {
+        currentAuth: function(AuthService) {
+          return AuthService.requireAuth();
+        }
+      }
     })
     .when('/consultants/:userId/contact-info', {
       templateUrl: 'views/consultants/consultantContactInfoTmpl.html',
-      controller: 'ConsultantCtrl'
+      controller: 'ConsultantCtrl',
+      resolve: {
+        currentAuth: function(AuthService) {
+          return AuthService.requireAuth();
+        }
+      }
     })
     .when('/consultants/:userId/contact-info/edit', {
       templateUrl: 'views/consultants/updateConsultantContactInfoTmpl.html',
-      controller: 'ConsultantCtrl'
-    })    
+      controller: 'ConsultantCtrl',
+      resolve: {
+        currentAuth: function(AuthService) {
+          return AuthService.requireAuth();
+        }
+      }
+    })   
     .when('/consultants/:userId/profile/edit', {
       templateUrl: 'views/consultants/updateConsultantProfileTmpl.html',
-      controller: 'ConsultantCtrl'
+      controller: 'ConsultantCtrl',
+      resolve: {
+        currentAuth: function(AuthService) {
+          return AuthService.requireAuth();
+        }
+      }
     })
     .otherwise({
       redirectTo: '/'

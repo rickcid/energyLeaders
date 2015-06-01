@@ -47,7 +47,7 @@ app.service('AuthService', function($http, $q, $location) {
         password: user.password
       }
     }).then(function(res) {
-      console.log(res)
+      console.log('loginUser:', res)
       deferred.resolve(res.data);
     }).catch(function(res) {
       deferred.reject(res.data);
@@ -55,15 +55,16 @@ app.service('AuthService', function($http, $q, $location) {
     return deferred.promise;
   };
 
+
   this.requireAuth = function() {
     var deferred = $q.defer();
     $http({
       method: 'GET',
       url: '/api/user/isLoggedIn'
     }).then(function(res) {
-      console.log(res)
+      console.log('requireAuth1:', res)
       if(res.status === 200) {
-        console.log(res.data);
+        console.log('requireAuth2:', res.data);
         return deferred.resolve(res.data)
       } else { 
         $location.path('/login');

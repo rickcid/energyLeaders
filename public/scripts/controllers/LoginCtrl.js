@@ -2,6 +2,9 @@ var app = angular.module('energyLeaders');
 
 app.controller('LoginCtrl', function($scope, $routeParams, $location, AuthService, toaster) {
 
+  // console.log('login', AuthService.requireAuth())
+  // $scope.loggedIn = AuthService.requireAuth();
+
   $scope.loginUser = function(user) {
 
     AuthService.loginUser(user).then(function() {
@@ -13,7 +16,6 @@ app.controller('LoginCtrl', function($scope, $routeParams, $location, AuthServic
       //console.log("Error...");
     });
   };
-
 
   // $scope.changePassword = function(consultant) {
 
