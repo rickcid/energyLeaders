@@ -5,15 +5,17 @@ app.controller('NavCtrl', function($scope, $routeParams, $location, toaster, Aut
 
 
 
-  $scope.loggedIn = true;
-  // AuthService.requireAuth();
-  console.log("loggedin", AuthService.requireAuth());
+  // $scope.loggedIn = AuthService.requireAuth();
+  // // AuthService.requireAuth();
+  // console.log("NavCtrl Auth", AuthService);
 
-  if(currentAuth.isCompany) {
-    $scope.isCompany === true;
-  }if (currentAuth.isConsultant) {
-    $scope.isConsultant === true;
-  }
+
+  // if(currentAuth.isCompany) {
+  //   $scope.isCompany === true;
+  // }if (currentAuth.isConsultant) {
+  //   $scope.isConsultant === true;
+  // }
+
 
   // $scope.currentUser = Auth.user;
 //   $scope.nosignedIn = function() {
