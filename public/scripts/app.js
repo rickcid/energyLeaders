@@ -7,21 +7,11 @@ app.config(function($routeProvider){
     })
     .when('/register/company', {
       templateUrl: 'views/register/registerCompanyTmpl.html',
-      controller: 'RegisterCtrl',
-      resolve: {
-        currentAuth: function(AuthService) {
-          return AuthService.requireAuth();
-        }
-      }
+      controller: 'RegisterCtrl'
     })
     .when('/register/consultant', {
       templateUrl: 'views/register/registerConsultantTmpl.html',
-      controller: 'RegisterCtrl',
-      resolve: {
-        currentAuth: function(AuthService) {
-          return AuthService.requireAuth();
-        }
-      }
+      controller: 'RegisterCtrl'
     })
     .when('/login', {
       templateUrl: 'views/login/loginUserTmpl.html',
@@ -39,6 +29,10 @@ app.config(function($routeProvider){
           return AuthService.requireAuth();
         }
       }
+    })
+    .when('/company/create-project', {
+      templateUrl: 'views/companies/companyCreateProjectTmpl.html',
+      controller: 'CompanyCtrl'
     })
     .when('/projects', {
       templateUrl: 'views/browseProjectsTmpl.html',

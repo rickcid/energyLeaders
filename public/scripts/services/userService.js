@@ -66,6 +66,26 @@ app.service('UserService', function($http, $q) {
       phone_number: "801-901-5595",
       date_created: '2015-05-01T16:06:58.970Z'
     },
+      {
+      profilesData: [ 
+        { 
+          //reference
+          Id: '54212' 
+        } 
+      ],
+      first_name: 'Rick',
+      last_name: 'Cid',
+      email: 'Rick@example.com',
+      location: {
+        address: "321 S Park Reserve Way",
+        city: "Salt Lake City",
+        zip_code: "84041",
+        state: "Utah",
+        country: "USA"
+      },
+      phone_number: "801-555-5555",
+      date_created: '2014-08-01T16:06:58.970Z'
+    },
     {
       profilesData: [ 
         { 
@@ -152,7 +172,7 @@ app.service('UserService', function($http, $q) {
 
         schools: 
       [
-        {
+       {
           school: "BYU",
           deg: "B.S.",
           maj: "Accounting",
@@ -230,15 +250,15 @@ app.service('UserService', function($http, $q) {
       schools:
       [
         {
-          school: "BYU",
+          school: "Arizona State University",
           deg: "B.S.",
-          maj: "Accounting",
+          maj: "Finance",
           year: "2001" 
         },
         {
-          school: "University of Arizona",
+          school: "Thunderbird, Graduate School of Global Management",
           deg: "MBA",
-          maj: "Global Business",
+          maj: "Global Strategy",
           year: "2005"
 
         }
